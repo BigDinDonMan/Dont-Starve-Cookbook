@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Ice",
+    "ingredientValues": {
+      "ICE": "1.0"
+    }
+  },
+  {
+    "name": "Carrot",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Corn",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Eggplant",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Pumpkin",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Blue Cap",
+    "ingredientValues": {
+      "VEGGIE": "0.5"
+    }
+  },
+  {
+    "name": "Green Cap",
+    "ingredientValues": {
+      "VEGGIE": "0.5"
+    }
+  },
+  {
+    "name": "Red Cap",
+    "ingredientValues": {
+      "VEGGIE": "0.5"
+    }
+  },
+  {
+    "name": "Mandrake",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Foliage",
+    "ingredientValues": {
+      "VEGGIE": "0.0"
+    }
+  },
+  {
+    "name": "Glow Berry",
+    "ingredientValues": {
+      "VEGGIE": "0.0"
+    }
+  },
+  {
+    "name": "Lichen",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Cactus Flesh",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Cactus Flower",
+    "ingredientValues": {
+      "VEGGIE": "0.5"
+    }
+  },
+  {
+    "name": "Seaweed",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Sweet Potato",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Aloe",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Asparagus",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Radish",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Kelp Fronds",
+    "ingredientValues": {
+      "VEGGIE": "0.5"
+    }
+  },
+  {
+    "name": "Ripe Stone Fruit",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Garlic",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Onion",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Pepper",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Potato",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Toma Root",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Popperfish",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  },
+  {
+    "name": "Corn Cod",
+    "ingredientValues": {
+      "VEGGIE": "1.0"
+    }
+  }
+]
