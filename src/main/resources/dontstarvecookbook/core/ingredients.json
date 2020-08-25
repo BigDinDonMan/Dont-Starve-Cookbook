@@ -166,5 +166,303 @@
     "ingredientValues": {
       "VEGGIE": 1.0
     }
+  },
+  {
+    "name": "Honey",
+    "ingredientValues": {
+      "SWEETENER": 1.0
+    }
+  },
+  {
+    "name": "Honeycomb",
+    "ingredientValues": {
+      "SWEETENER": 1.0
+    }
+  },
+  {
+    "name": "Royal Jelly",
+    "ingredientValues": {
+      "SWEETENER": 3.0
+    }
+  },
+  {
+    "name": "Monster Meat",
+    "ingredientValues": {
+      "MONSTER_FOOD": 1.0,
+      "MEAT": 1.0
+    }
+  },
+  {
+    "name": "Durian",
+    "ingredientValues": {
+      "MONSTER_FOOD": 1.0,
+      "FRUIT": 1.0
+    }
+  },
+  {
+    "name": "Jellyfish",
+    "ingredientValues": {
+      "MONSTER_FOOD": 1.0,
+      "FISH": 1.0
+    }
+  },
+  {
+    "name": "Drumstick",
+    "ingredientValues": {
+      "MEAT": 0.5
+    }
+  },
+  {
+    "name": "Small Jerky",
+    "ingredientValues": {
+      "MEAT": 0.5
+    }
+  },
+  {
+    "name": "Monster Jerky",
+    "ingredientValues": {
+      "MEAT": 1.0,
+      "MONSTER_FOOD": 1.0
+    }
+  },
+  {
+    "name": "Jerky",
+    "ingredientValues": {
+      "MEAT": 1.0
+    }
+  },
+  {
+    "name": "Frog Legs",
+    "ingredientValues": {
+      "MEAT": 0.5
+    }
+  },
+  {
+    "name": "Leafy Meat (DST)",
+    "ingredientValues": {
+      "MEAT": 1.0
+    }
+  },
+  {
+    "name": "Meat",
+    "ingredientValues": {
+      "MEAT": 1.0
+    }
+  },
+  {
+    "name": "Morsel",
+    "ingredientValues": {
+      "MEAT": 0.5
+    }
+  },
+  {
+    "name": "Fish",
+    "ingredientValues": {
+      "MEAT": 0.5,
+      "FISH": 1.0
+    }
+  },
+  {
+    "name": "Eel",
+    "ingredientValues": {
+      "MEAT": 0.5,
+      "FISH": 1.0
+    }
+  },
+  {
+    "name": "Dead Dogfish",
+    "ingredientValues": {
+      "MEAT": 0.5,
+      "FISH": 1.0
+    }
+  },
+  {
+    "name": "Neon Quattro",
+    "ingredientValues": {
+      "FISH": 1.0,
+      "MEAT": 0.5
+    }
+  },
+  {
+    "name": "Pierrot Fish",
+    "ingredientValues": {
+      "FISH": 1.0,
+      "MEAT": 0.5
+    }
+  },
+  {
+    "name": "Purple Grouper",
+    "ingredientValues": {
+      "FISH": 1.0,
+      "MEAT": 0.5
+    }
+  },
+  {
+    "name": "Raw Fish",
+    "ingredientValues": {
+      "FISH": 1.0,
+      "MEAT": 0.5
+    }
+  },
+  {
+    "name": "Shark Fin",
+    "ingredientValues": {
+      "FISH": 1.0,
+      "MEAT": 0.5
+    }
+  },
+  {
+    "name": "Roe",
+    "ingredientValues": {
+      "FISH": 1.0,
+      "MEAT": 0.5
+    }
+  },
+  {
+    "name": "Tropical Fish",
+    "ingredientValues": {
+      "FISH": 1.0,
+      "MEAT": 0.5
+    }
+  },
+  {
+    "name": "Fish Morsel",
+    "ingredientValues": {
+      "FISH": 0.5
+    }
+  },
+  {
+    "name": "Batilisk Wing (DST)",
+    "ingredientValues": {
+      "MEAT": 0.5
+    }
+  },
+  {
+    "name": "Raw Fish (DST)",
+    "ingredientValues": {
+      "FISH": 1.0,
+      "MEAT": 1.0
+    }
+  },
+  {
+    "name": "Barnacles",
+    "ingredientValues": {
+      "MEAT": 0.25,
+      "FISH": 0.25
+    }
+  },
+  {
+    "name": "Berries",
+    "ingredientValues": {
+      "FRUIT": 0.5
+    }
+  },
+  {
+    "name": "Juicy Berries",
+    "ingredientValues": {
+      "FRUIT": 0.5
+    }
+  },
+  {
+    "name": "Banana",
+    "ingredientValues": {
+      "FRUIT": 1.0
+    }
+  },
+  {
+    "name": "Dragon Fruit",
+    "ingredientValues": {
+      "FRUIT": 1.0
+    }
+  },
+  {
+    "name": "Pomegranate",
+    "ingredientValues": {
+      "FRUIT": 1.0
+    }
+  },
+  {
+    "name": "Watermelon",
+    "ingredientValues": {
+      "FRUIT": 1.0
+    }
+  },
+  {
+    "name": "Coffee Beans",
+    "ingredientValues": {
+      "FRUIT": 1.0
+    }
+  },
+  {
+    "name": "Halved Coconut",
+    "ingredientValues": {
+      "FRUIT": 1.0
+    }
+  },
+  {
+    "name": "Butter",
+    "ingredientValues": {
+      "DAIRY": 1.0
+    }
+  },
+  {
+    "name": "Electric Milk",
+    "ingredientValues": {
+      "DAIRY": 1.0
+    }
+  },
+  {
+    "name": "Egg",
+    "ingredientValues": {
+      "EGG": 1.0
+    }
+  },
+  {
+    "name": "Doydoy Egg",
+    "ingredientValues": {
+      "EGG": 1.0
+    }
+  },
+  {
+    "name": "Tallbird Egg",
+    "ingredientValues": {
+      "EGG": 4.0
+    }
+  },
+  {
+    "name": "Nightmare Fuel (DST)",
+    "ingredientValues": {
+      "INEDIBLE": 1.0
+    }
+  },
+  {
+    "name": "Twigs",
+    "ingredientValues": {
+      "INEDIBLE": 1.0
+    }
+  },
+  {
+    "name": "Bone Shards (DST)",
+    "ingredientValues": {
+      "INEDIBLE": 1.0
+    }
+  },
+  {
+    "name": "Dorsal Fin",
+    "ingredientValues": {
+      "INEDIBLE": 1.0
+    }
+  },
+  {
+    "name": "Weevole Carapace",
+    "ingredientValues": {
+      "INEDIBLE": 1.0
+    }
+  },
+  {
+    "name": "Volt Goat Horn (DST)",
+    "ingredientValues": {
+      "INEDIBLE": 1.0
+    }
   }
 ]

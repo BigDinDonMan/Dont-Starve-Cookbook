@@ -1,5 +1,6 @@
 package dontstarvecookbook.core;
 
+import dontstarvecookbook.core.enums.DishType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -9,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainWindowController implements Initializable {
@@ -50,7 +52,24 @@ public class MainWindowController implements Initializable {
     }
 
     private void initializeButtonEvents() {
+        baseGameSpecificToggleButton.setOnAction(e -> {
 
+        });
+        hamletSpecificToggleButton.setOnAction(e -> {
+
+        });
+        shipwreckedSpecificToggleButton.setOnAction(e -> {
+
+        });
+        warlySpecificToggleButton.setOnAction(e -> {
+
+        });
+        showAllRecipesButton.setOnAction(e -> {
+
+        });
+        togetherSpecificToggleButton.setOnAction(e -> {
+
+        });
     }
 
     private void initializeListViewCellFactory() {
@@ -63,5 +82,9 @@ public class MainWindowController implements Initializable {
 
     private void initializeListViewEvents() {
 
+    }
+
+    private List<CrockPotDish> gatherDishesByType(DishType type) {
+        return null;
     }
 }
