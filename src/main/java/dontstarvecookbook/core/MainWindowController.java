@@ -1,5 +1,7 @@
 package dontstarvecookbook.core;
 
+import com.jfoenix.controls.JFXDrawer;
+import com.jfoenix.controls.JFXHamburger;
 import dontstarvecookbook.core.enums.DishType;
 import dontstarvecookbook.core.enums.IngredientType;
 import dontstarvecookbook.core.utils.StringUtilities;
@@ -9,27 +11,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class MainWindowController implements Initializable {
@@ -69,9 +65,34 @@ public class MainWindowController implements Initializable {
     @FXML
     private Label sanityRestoredLabel;
 
+    @FXML
+    private JFXDrawer foodValuesJfxDrawer;
+    @FXML
+    private JFXHamburger showFoodValuesHamburger;
+
     //TODO: make a hashmap containing dish and ingredient images, so I dont need to instantiate a new one every time
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        try {
+            Parent p = FXMLLoader.load(getClass().getResource("/dontstarvecookbook/fxml/foodvaluespopupmenu.fxml"));
+            foodValuesJfxDrawer.setSidePane(p);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        foodValuesJfxDrawer.close();
+
+
+        showFoodValuesHamburger.addEventFilter(MouseEvent.MOUSE_PRESSED, e -> {
+            if (foodValuesJfxDrawer.isShown()) {
+                foodValuesJfxDrawer.close();
+                foodValuesJfxDrawer.setMouseTransparent(true);
+            } else {
+                foodValuesJfxDrawer.open();
+                foodValuesJfxDrawer.setMouseTransparent(false);
+            }
+        });
         initializeButtonEvents();
         initializeListViewCellFactory();
         initializeListViewEvents();
@@ -233,17 +254,6 @@ public class MainWindowController implements Initializable {
 
     @FXML
     public void showFoodValuesWindow(ActionEvent e) {
-        try {
-            Parent p = FXMLLoader.load(getClass().getResource("/dontstarvecookbook/fxml/foodvalueswindow.fxml"));
-            Scene s = new Scene(p);
-            Stage stage = new Stage();
-            stage.initModality(Modality.NONE);
-            stage.setTitle("Food values");
-            stage.setScene(s);
-            stage.getIcons().add(new Image(getClass().getResource("/images/appicon.png").toExternalForm()));
-            stage.show();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+
     }
 }
