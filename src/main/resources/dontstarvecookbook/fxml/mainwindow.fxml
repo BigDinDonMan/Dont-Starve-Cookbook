@@ -103,7 +103,8 @@
                                                 <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@../../images/ui-icons/health.png" />
-                                                   </image></ImageView>
+                                                   </image>
+                                                </ImageView>
                                                 <Label fx:id="healthRestoredLabel" alignment="CENTER" text="???" />
                                              </children>
                                           </VBox>
@@ -112,7 +113,8 @@
                                                 <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@../../images/ui-icons/hunger.png" />
-                                                   </image></ImageView>
+                                                   </image>
+                                                </ImageView>
                                                 <Label fx:id="hungerRestoredLabel" alignment="CENTER" text="???" />
                                              </children>
                                           </VBox>
@@ -121,7 +123,8 @@
                                                 <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
                                                       <Image url="@../../images/ui-icons/sanity.png" />
-                                                   </image></ImageView>
+                                                   </image>
+                                                </ImageView>
                                                 <Label fx:id="sanityRestoredLabel" alignment="CENTER" text="???" />
                                              </children>
                                           </VBox>
@@ -141,6 +144,6 @@
             </HBox>
          </children>
       </VBox>
-      <JFXDrawer fx:id="foodValuesJfxDrawer" defaultDrawerSize="250.0" direction="RIGHT" layoutX="405.0" mouseTransparent="true" prefHeight="450.0" prefWidth="220.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="405.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <JFXDrawer fx:id="foodValuesJfxDrawer" defaultDrawerSize="250.0" direction="RIGHT" layoutX="405.0" layoutY="33.0" mouseTransparent="true" prefHeight="417.0" prefWidth="220.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="405.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
    </children>
 </AnchorPane>

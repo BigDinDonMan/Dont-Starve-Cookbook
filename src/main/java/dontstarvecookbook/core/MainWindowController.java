@@ -2,6 +2,8 @@ package dontstarvecookbook.core;
 
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
+import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
+import com.jfoenix.transitions.hamburger.HamburgerBasicCloseTransition;
 import dontstarvecookbook.core.enums.DishType;
 import dontstarvecookbook.core.enums.IngredientType;
 import dontstarvecookbook.core.utils.StringUtilities;
@@ -70,21 +72,37 @@ public class MainWindowController implements Initializable {
     @FXML
     private JFXHamburger showFoodValuesHamburger;
 
+    private HamburgerBasicCloseTransition hamburgerButtonTransition;
+
     //TODO: make a hashmap containing dish and ingredient images, so I dont need to instantiate a new one every time
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        initializeButtonEvents();
+        initializeListViewCellFactory();
+        initializeListViewEvents();
+        initializeListViewContents();
+        initializeJFXControls();
+    }
 
+    private void initializeJFXControls() {
+        //initialization code for jfxdrawer
         try {
             Parent p = FXMLLoader.load(getClass().getResource("/dontstarvecookbook/fxml/foodvaluespopupmenu.fxml"));
             foodValuesJfxDrawer.setSidePane(p);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
         foodValuesJfxDrawer.close();
 
+        //initialization code for jfxhamburger
+
+        hamburgerButtonTransition = new HamburgerBasicCloseTransition(showFoodValuesHamburger);
+        hamburgerButtonTransition.setRate(-1);
 
         showFoodValuesHamburger.addEventFilter(MouseEvent.MOUSE_PRESSED, e -> {
+            hamburgerButtonTransition.setRate(hamburgerButtonTransition.getRate() * -1);
+            hamburgerButtonTransition.play();
+
             if (foodValuesJfxDrawer.isShown()) {
                 foodValuesJfxDrawer.close();
                 foodValuesJfxDrawer.setMouseTransparent(true);
@@ -93,10 +111,6 @@ public class MainWindowController implements Initializable {
                 foodValuesJfxDrawer.setMouseTransparent(false);
             }
         });
-        initializeButtonEvents();
-        initializeListViewCellFactory();
-        initializeListViewEvents();
-        initializeListViewContents();
     }
 
     private void initializeButtonEvents() {
@@ -250,10 +264,5 @@ public class MainWindowController implements Initializable {
     private List<CrockPotDish> gatherDishesByType(DishType type) {
         return CrockPotDishesStorage.getInstance().getDishes().
                 stream().filter(dish -> dish.getDishType().equals(type)).collect(Collectors.toList());
-    }
-
-    @FXML
-    public void showFoodValuesWindow(ActionEvent e) {
-
     }
 }
