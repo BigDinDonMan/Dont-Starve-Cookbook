@@ -96,13 +96,13 @@ public class MainWindowController implements Initializable {
     }
 
     private void initializeListViewCellFactory() {
-        dishesListView.setCellFactory(callback -> new ListCell<>() {
+        dishesListView.setCellFactory(callback -> new ListCell<CrockPotDish>() {
             private ImageView view = new ImageView();
             @Override
             protected void updateItem(CrockPotDish item, boolean empty) {
                 super.updateItem(item, empty);
                 if (!isEmpty()) {
-                    var filename = item.getName().toLowerCase().replace(' ', '-').replace("'", "");
+                    String filename = item.getName().toLowerCase().replace(' ', '-').replace("'", "");
                     String path = String.format("/images/crockpot-dish-icons/%s.png", filename);
                     view.setImage(new Image(getClass().getResource(path).toExternalForm()));
                     setGraphic(view);
@@ -121,16 +121,16 @@ public class MainWindowController implements Initializable {
 
     private void initializeListViewEvents() {
         dishesListView.setOnMouseClicked(e -> {
-            var item = dishesListView.getSelectionModel().getSelectedItem();
+            CrockPotDish item = dishesListView.getSelectionModel().getSelectedItem();
             if (item != null) displayDishInformation(item);
         });
     }
 
     private void displayDishInformation(CrockPotDish dish) {
         infoVBox.getChildren().clear();
-        var df = new DecimalFormat();
+        DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(1);
-        var dfs = new DecimalFormatSymbols();
+        DecimalFormatSymbols dfs = new DecimalFormatSymbols();
         dfs.setDecimalSeparator('.');
         df.setDecimalFormatSymbols(dfs);
         dishNameLabel.setText(dish.getName());
@@ -138,15 +138,15 @@ public class MainWindowController implements Initializable {
         hungerRestoredLabel.setText(df.format(dish.getHungerRecovered()));
         sanityRestoredLabel.setText(Integer.toString(dish.getSanityRecovered()));
 
-        var filename = dish.getName().toLowerCase().replace(' ', '-').replace("'", "");
-        var path = String.format("/images/crockpot-dish-icons/%s.png", filename);
+        String filename = dish.getName().toLowerCase().replace(' ', '-').replace("'", "");
+        String path = String.format("/images/crockpot-dish-icons/%s.png", filename);
         dishIconImageView.setImage(new Image(getClass().getResource(path).toExternalForm()));
 
-        var textStyle = "-fx-font-size: 16px;";
-        var titleStyle = "-fx-font-weight: bold; -fx-font-size: 16px;";
+        String textStyle = "-fx-font-size: 16px;";
+        String titleStyle = "-fx-font-weight: bold; -fx-font-size: 16px;";
 
-        var textInsets = new Insets(5, 0, 0, 45);
-        var titleInsets = new Insets(10, 0, 0, 25);
+        Insets textInsets = new Insets(5, 0, 0, 45);
+        Insets titleInsets = new Insets(10, 0, 0, 25);
 
         Label neededFoodValuesTitle = createLabel("Needed food values: ", titleStyle, true);
         infoVBox.getChildren().add(neededFoodValuesTitle);
@@ -154,10 +154,10 @@ public class MainWindowController implements Initializable {
 
         df.setMaximumFractionDigits(2);
         dish.getNeededFoodValues().forEach((ingredientType, foodValue) -> {
-            var foodValueStr = StringUtilities.removeTrailingChars(df.format(foodValue), '0');
-            var ingrName = IngredientType.getPrettyName(ingredientType, false);
-            var content = String.format("- %sx %s value", foodValueStr, ingrName);
-            var l = createLabel(content, textStyle, true);
+            String foodValueStr = StringUtilities.removeTrailingChars(df.format(foodValue), '0');
+            String ingrName = IngredientType.getPrettyName(ingredientType, false);
+            String content = String.format("- %sx %s value", foodValueStr, ingrName);
+            Label l = createLabel(content, textStyle, true);
             infoVBox.getChildren().add(l);
             VBox.setMargin(l, textInsets);
         });
@@ -167,12 +167,12 @@ public class MainWindowController implements Initializable {
         VBox.setMargin(neededIngredientsTitle, titleInsets);
 
         if (dish.getNeededSpecificIngredients().isEmpty()) {
-            var l = createLabel("- None\n", textStyle, true);
+            Label l = createLabel("- None\n", textStyle, true);
             infoVBox.getChildren().add(l);
             VBox.setMargin(l, textInsets);
         } else {
-            for (var ingredient : dish.getNeededSpecificIngredients()) {
-                var l = createLabel("- No " + ingredient, textStyle, true);
+            for (String ingredient : dish.getNeededSpecificIngredients()) {
+                Label l = createLabel("- No " + ingredient, textStyle, true);
                 infoVBox.getChildren().add(l);
                 VBox.setMargin(l, textInsets);
             }
@@ -184,12 +184,12 @@ public class MainWindowController implements Initializable {
         VBox.setMargin(excludedIngredientsTitle, titleInsets);
 
         if (dish.getExcludedSpecificIngredients().isEmpty()) {
-            var l = createLabel("- None\n", textStyle, true);
+            Label l = createLabel("- None\n", textStyle, true);
             infoVBox.getChildren().add(l);
             VBox.setMargin(l, textInsets);
         } else {
-            for (var ingredient : dish.getExcludedSpecificIngredients()) {
-                var l = createLabel("- No " + ingredient, textStyle, true);
+            for (String ingredient : dish.getExcludedSpecificIngredients()) {
+                Label l = createLabel("- No " + ingredient, textStyle, true);
                 infoVBox.getChildren().add(l);
                 VBox.setMargin(l, textInsets);
             }
@@ -200,12 +200,12 @@ public class MainWindowController implements Initializable {
         VBox.setMargin(excludedFoodTypesTitle, titleInsets);
 
         if (dish.getExcludedIngredientTypes().isEmpty()) {
-            var l = createLabel("- None\n", textStyle, true);
+            Label l = createLabel("- None\n", textStyle, true);
             infoVBox.getChildren().add(l);
             VBox.setMargin(l, textInsets);
         } else {
-            for (var ingredientType : dish.getExcludedIngredientTypes()) {
-                var l = createLabel("- No " + IngredientType.getPluralForm(ingredientType, true), textStyle, true);
+            for (IngredientType ingredientType : dish.getExcludedIngredientTypes()) {
+                Label l = createLabel("- No " + IngredientType.getPluralForm(ingredientType, true), textStyle, true);
                 infoVBox.getChildren().add(l);
                 VBox.setMargin(l, textInsets);
             }
@@ -220,7 +220,7 @@ public class MainWindowController implements Initializable {
     }
 
     private Label createLabel(String text, String style, boolean wrap) {
-        var l = new Label(text);
+        Label l = new Label(text);
         l.setStyle(style);
         l.setWrapText(wrap);
         return l;

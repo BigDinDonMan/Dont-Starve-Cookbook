@@ -35,7 +35,9 @@ public class CrockPotDishesStorage {
     private List<CrockPotDish> loadDishes() throws IOException {
         String s = "";
         try (InputStream is = getClass().getResourceAsStream("/dontstarvecookbook/core/dishes.json")) {
-            s = new String(is.readAllBytes());
+            byte[] bytes = new byte[is.available()];
+            is.read(bytes, 0, bytes.length);
+            s = new String(bytes);
         }
         return new Gson().fromJson(s, new TypeToken<List<CrockPotDish>>() {}.getType());
     }

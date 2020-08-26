@@ -35,7 +35,9 @@ public class CookingIngredientsStorage {
     private List<CookingIngredient> loadIngredients() throws URISyntaxException, IOException {
         String s = "";
         try (InputStream is = getClass().getResourceAsStream("/dontstarvecookbook/core/ingredients.json")) {
-            s = new String(is.readAllBytes());
+            byte[] bytes = new byte[is.available()];
+            is.read(bytes, 0, bytes.length);
+            s = new String(bytes);
         }
         return new Gson().fromJson(s, new TypeToken<List<CookingIngredient>>() {}.getType());
     }
