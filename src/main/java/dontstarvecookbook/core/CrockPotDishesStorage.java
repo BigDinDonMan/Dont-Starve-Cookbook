@@ -1,7 +1,14 @@
 package dontstarvecookbook.core;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class CrockPotDishesStorage {
@@ -18,15 +25,19 @@ public class CrockPotDishesStorage {
     private List<CrockPotDish> dishes;
 
     private CrockPotDishesStorage() {
-//        try {
-//
-//        } catch (IOException | URISyntaxException e) {
-//
-//        }
+        try {
+            this.dishes = this.loadDishes();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    private List<CrockPotDish> loadDishes() throws IOException, URISyntaxException {
-        return null;
+    private List<CrockPotDish> loadDishes() throws IOException {
+        String s = "";
+        try (InputStream is = getClass().getResourceAsStream("/dontstarvecookbook/core/dishes.json")) {
+            s = new String(is.readAllBytes());
+        }
+        return new Gson().fromJson(s, new TypeToken<List<CrockPotDish>>() {}.getType());
     }
 
     public List<CrockPotDish> getDishes() {

@@ -7,13 +7,18 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 public class DontStarveCookbookMain extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
         Parent p = FXMLLoader.load(getClass().getResource("/dontstarvecookbook/fxml/mainwindow.fxml"));
         Scene s = new Scene(p);
-        stage.getIcons().add(new Image(getClass().getResource("/images/appicon.png").toExternalForm()));
+        try (InputStream is = getClass().getResourceAsStream("/images/appicon.png")) {
+            stage.getIcons().add(new Image(is));
+        }
         stage.setScene(s);
         stage.setResizable(false);
         stage.setTitle("Don't Starve Cookbook");

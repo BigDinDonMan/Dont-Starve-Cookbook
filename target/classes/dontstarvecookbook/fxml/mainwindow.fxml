@@ -16,107 +16,132 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="501.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dontstarvecookbook.core.MainWindowController">
+<AnchorPane prefHeight="450.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dontstarvecookbook.core.MainWindowController">
    <children>
-      <MenuBar layoutY="-2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox prefHeight="420.0" prefWidth="248.0">
+            <MenuBar>
+               <menus>
+                  <Menu mnemonicParsing="false" text="Options">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Show food values" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                <children>
-                  <Button fx:id="showAllRecipesButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Show all recipes" />
-                  <HBox prefHeight="40.0" prefWidth="242.0">
+                  <VBox prefHeight="420.0" prefWidth="248.0">
                      <children>
-                        <Button fx:id="baseGameSpecificToggleButton" maxWidth="1.7976931348623157E308" minWidth="35.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="40.0" HBox.hgrow="ALWAYS">
-                           <graphic>
-                              <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/button-icons/rog_icon.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="hamletSpecificToggleButton" maxWidth="1.7976931348623157E308" minWidth="35.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="40.0" HBox.hgrow="ALWAYS">
-                           <graphic>
-                              <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/button-icons/hamlet_icon.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="shipwreckedSpecificToggleButton" maxWidth="1.7976931348623157E308" minWidth="35.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="40.0" HBox.hgrow="ALWAYS">
-                           <graphic>
-                              <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/button-icons/shipwrecked_icon.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="warlySpecificToggleButton" maxWidth="1.7976931348623157E308" minWidth="35.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="40.0" HBox.hgrow="ALWAYS">
-                           <graphic>
-                              <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/button-icons/warly.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="togetherSpecificToggleButton" maxWidth="1.7976931348623157E308" minWidth="35.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="40.0" HBox.hgrow="ALWAYS">
-                           <graphic>
-                              <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/button-icons/dst_icon.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <ListView fx:id="dishesListView" prefHeight="459.0" prefWidth="248.0" />
-               </children>
-            </VBox>
-            <BorderPane maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="352.0">
-               <center>
-                  <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                     <content>
-                        <VBox fx:id="dishDisplayContainer" alignment="TOP_CENTER" prefHeight="250.0" prefWidth="250.0">
+                        <Button fx:id="showAllRecipesButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Show all recipes" />
+                        <HBox prefHeight="40.0" prefWidth="242.0">
                            <children>
-                              <Label fx:id="dishNameLabel" alignment="CENTER" textAlignment="JUSTIFY">
-                                 <VBox.margin>
-                                    <Insets top="15.0" />
-                                 </VBox.margin>
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Label>
-                              <ImageView fx:id="dishIconImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                              <VBox fx:id="infoVBox" prefHeight="150.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                              <Button fx:id="baseGameSpecificToggleButton" maxWidth="1.7976931348623157E308" minWidth="35.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="40.0" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/button-icons/rog_icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="hamletSpecificToggleButton" maxWidth="1.7976931348623157E308" minWidth="35.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="40.0" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/button-icons/hamlet_icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="shipwreckedSpecificToggleButton" maxWidth="1.7976931348623157E308" minWidth="35.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="40.0" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/button-icons/shipwrecked_icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="warlySpecificToggleButton" maxWidth="1.7976931348623157E308" minWidth="35.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="40.0" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/button-icons/warly.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="togetherSpecificToggleButton" maxWidth="1.7976931348623157E308" minWidth="35.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="40.0" HBox.hgrow="ALWAYS">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/button-icons/dst_icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
                            </children>
-                        </VBox>
-                     </content>
-                  </ScrollPane>
-               </center>
-            </BorderPane>
+                        </HBox>
+                        <ListView fx:id="dishesListView" prefHeight="459.0" prefWidth="248.0" />
+                     </children>
+                  </VBox>
+                  <BorderPane maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="352.0">
+                     <center>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <content>
+                              <VBox fx:id="dishDisplayContainer" alignment="TOP_CENTER" prefHeight="250.0" prefWidth="250.0">
+                                 <children>
+                                    <Label fx:id="dishNameLabel" alignment="CENTER" text="Select dish from the list to see details" textAlignment="JUSTIFY">
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="dishIconImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                                    <HBox prefHeight="119.0" prefWidth="338.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../images/ui-icons/health.png" />
+                                                   </image></ImageView>
+                                                <Label fx:id="healthRestoredLabel" alignment="CENTER" text="???" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../images/ui-icons/hunger.png" />
+                                                   </image></ImageView>
+                                                <Label fx:id="hungerRestoredLabel" alignment="CENTER" text="???" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../images/ui-icons/sanity.png" />
+                                                   </image></ImageView>
+                                                <Label fx:id="sanityRestoredLabel" alignment="CENTER" text="???" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <VBox fx:id="infoVBox" prefHeight="150.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                                 </children>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </center>
+                  </BorderPane>
+               </children>
+            </HBox>
          </children>
-      </HBox>
+      </VBox>
    </children>
 </AnchorPane>

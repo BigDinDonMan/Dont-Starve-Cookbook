@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "name": "Pierogi",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "MEAT": 0.25,
+      "VEGGIE": 0.5,
+      "EGG": 1.0
+    },
+    "neededSpecificIngredients": [],
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": ["Mandrake", "Twigs"],
+    "additionalNotes": "",
+    "healthRecovered": 40,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
+  }
+]

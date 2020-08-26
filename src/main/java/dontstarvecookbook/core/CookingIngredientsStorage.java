@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -32,9 +33,11 @@ public class CookingIngredientsStorage {
     }
 
     private List<CookingIngredient> loadIngredients() throws URISyntaxException, IOException {
-        Path filePath = Paths.get(getClass().getResource("/dontstarvecookbook/core/ingredients.json").toURI());
-        String fileContents = Files.lines(filePath).reduce("", String::concat);
-        return new Gson().fromJson(fileContents, new TypeToken<List<CookingIngredient>>() {}.getType());
+        String s = "";
+        try (InputStream is = getClass().getResourceAsStream("/dontstarvecookbook/core/ingredients.json")) {
+            s = new String(is.readAllBytes());
+        }
+        return new Gson().fromJson(s, new TypeToken<List<CookingIngredient>>() {}.getType());
     }
 
 
