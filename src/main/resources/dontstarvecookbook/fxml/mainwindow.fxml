@@ -24,7 +24,7 @@
                <menus>
                   <Menu mnemonicParsing="false" text="Options">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Show food values" />
+                        <MenuItem mnemonicParsing="false" onAction="#showFoodValuesWindow" text="Show food values" />
                      </items>
                   </Menu>
                </menus>
