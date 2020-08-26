@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class CookingIngredient {
     private String name;
-    private Map<IngredientType, Double> ingredientValues;
+    private Map<IngredientType, Float> ingredientValues;
 
     public CookingIngredient() {}
 
@@ -20,7 +20,7 @@ public class CookingIngredient {
         return name;
     }
 
-    public Map<IngredientType, Double> getIngredientValues() {
+    public Map<IngredientType, Float> getIngredientValues() {
         return ingredientValues;
     }
 
@@ -28,7 +28,7 @@ public class CookingIngredient {
         this.name = name;
     }
 
-    public void setIngredientValues(Map<IngredientType, Double> values) {
+    public void setIngredientValues(Map<IngredientType, Float> values) {
         this.ingredientValues = values;
     }
 }

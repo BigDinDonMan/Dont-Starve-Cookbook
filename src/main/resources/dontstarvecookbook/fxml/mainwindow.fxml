@@ -134,6 +134,9 @@
                                     </HBox>
                                     <VBox fx:id="infoVBox" prefHeight="150.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
                                  </children>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
                               </VBox>
                            </content>
                         </ScrollPane>
