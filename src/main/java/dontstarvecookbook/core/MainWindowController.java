@@ -144,7 +144,7 @@ public class MainWindowController implements Initializable {
                 super.updateItem(item, empty);
                 if (!isEmpty()) {
                     ImageView view = new ImageView();
-                    view.setImage(CrockPotDishesStorage.getInstance().getDishIcons().get(item.getName()));
+                    view.setImage(CrockPotDishesStorage.getInstance().getDishIcons().get(item));
                     view.setFitHeight(64);
                     view.setFitWidth(64);
                     view.setSmooth(true);
@@ -182,7 +182,7 @@ public class MainWindowController implements Initializable {
         sanityRestoredLabel.setText(Integer.toString(dish.getSanityRecovered()));
 
 //        String path = FileUtilities.formatImagePath(dish, "png");
-        dishIconImageView.setImage(CrockPotDishesStorage.getInstance().getDishIcons().get(dish.getName()));
+        dishIconImageView.setImage(CrockPotDishesStorage.getInstance().getDishIcons().get(dish));
 
         String textStyle = "-fx-font-size: 16px;";
         String titleStyle = "-fx-font-weight: bold; -fx-font-size: 16px;";

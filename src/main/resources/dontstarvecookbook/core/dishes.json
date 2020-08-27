@@ -222,7 +222,7 @@
   },
   {
     "name": "Ceviche (DST)",
-    "dishType": "HAMLET_SPECIFIC",
+    "dishType": "TOGETHER_SPECIFIC",
     "neededFoodValues": {},
     "neededSpecificIngredients": {
       "Ice": 1,

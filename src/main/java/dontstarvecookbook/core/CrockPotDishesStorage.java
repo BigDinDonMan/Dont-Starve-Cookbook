@@ -24,7 +24,7 @@ public class CrockPotDishesStorage {
     }
 
     private List<CrockPotDish> dishes;
-    private Map<String, Image> dishIcons;
+    private Map<CrockPotDish, Image> dishIcons;
 
     private CrockPotDishesStorage() {
         try {
@@ -36,12 +36,12 @@ public class CrockPotDishesStorage {
         this.dishIcons = this.loadDishIcons();
     }
 
-    private Map<String, Image> loadDishIcons() {
-        Map<String, Image> images = new HashMap<>();
+    private Map<CrockPotDish, Image> loadDishIcons() {
+        Map<CrockPotDish, Image> images = new HashMap<>();
         for (CrockPotDish dish : this.dishes) {
             String path = FileUtilities.formatImagePath(dish, "png");
             Image i = new Image(getClass().getResource(path).toExternalForm());
-            images.put(dish.getName(), i);
+            images.put(dish, i);
         }
         return images;
     }
@@ -60,7 +60,7 @@ public class CrockPotDishesStorage {
         return dishes;
     }
 
-    public Map<String, Image> getDishIcons() {
+    public Map<CrockPotDish, Image> getDishIcons() {
         return dishIcons;
     }
 }
