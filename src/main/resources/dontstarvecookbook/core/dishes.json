@@ -9,7 +9,7 @@
     },
     "excludedIngredientTypes": [],
     "excludedSpecificIngredients": [],
-    "additionalNotes": "Recipe actually says it needs 2 vegetables, not a specific vegetable value (its listed as 1.0 because minimum veggie value is 0.5)",
+    "additionalNotes": "",
     "healthRecovered": 10,
     "hungerRecovered": 75,
     "sanityRecovered": 20
@@ -44,6 +44,224 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 12.5,
+    "sanityRecovered": 33
+  },
+  {
+    "name": "Asparagus Soup",
+    "dishType": "HAMLET_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 0.5
+    },
+    "neededSpecificIngredients": {
+      "Asparagus": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 18.75,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Asparagus Soup (DST)",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 1.5
+    },
+    "neededSpecificIngredients": {
+      "Asparagus": 1
+    },
+    "excludedIngredientTypes": ["MEAT", "FISH", "INEDIBLE"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 18.75,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Bacon and Eggs",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "MEAT": 1.25,
+      "EGG": 2.0
+    },
+    "neededSpecificIngredients": {},
+    "excludedIngredientTypes": ["VEGGIE"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Meat value of more than 1.0 is needed, so 1.25 is enough",
+    "healthRecovered": 20,
+    "hungerRecovered": 75,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Barnacle Nigiri",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {
+      "EGG": 1.0
+    },
+    "neededSpecificIngredients": {
+      "Barnacle": 1,
+      "Kelp Fronds": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 40,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Barnacle Pita",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 0.5
+    },
+    "neededSpecificIngredients": {
+      "Barnacle": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Beefy Greens",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Leafy Meat": 1,
+      "Vegetables": 3
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 40,
+    "hungerRecovered": 75,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Bisque",
+    "dishType": "SHIPWRECKED_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Limpets": 3,
+      "Ice": 1
+    },
+    "excludedIngredientTypes": ["MEAT", "FISH", "VEGGIE", "INEDIBLE", "BUG", "DAIRY", "MONSTER_FOOD", "FRUIT", "SWEETENER","EGG"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Cannot use anything else than 3 Limpets and 1 Ice",
+    "healthRecovered": 60,
+    "hungerRecovered": 18.75,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Butter Muffin",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 0.5
+    },
+    "neededSpecificIngredients": {
+      "Butterfly Wings": 1
+    },
+    "excludedIngredientTypes": ["MEAT", "FISH"],
+    "excludedSpecificIngredients": ["Mandrake"],
+    "additionalNotes": "Can also use Moon Moth Wings",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "California Roll",
+    "dishType": "SHIPWRECKED_SPECIFIC",
+    "neededFoodValues": {
+      "FISH": 1.0
+    },
+    "neededSpecificIngredients": {
+      "Seaweed": 2
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Seaweed needs to be raw. If playing DST, can also use Kelp Fronds.",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 10
+  },
+  {
+    "name": "Caviar",
+    "dishType": "SHIPWRECKED_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 0.5
+    },
+    "neededSpecificIngredients": {
+      "Roe": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Adding Twigs may result in Fishsticks, corn - Fish Tacos, fish - Seafood Gumbo",
+    "healthRecovered": 3,
+    "hungerRecovered": 12.5,
+    "sanityRecovered": 33
+  },
+  {
+    "name": "Ceviche",
+    "dishType": "SHIPWRECKED_SPECIFIC",
+    "neededFoodValues": {
+    },
+    "neededSpecificIngredients": {
+      "Ice": 1,
+      "Fish": 2
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": ["Dead Wobster"],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 25,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Ceviche (DST)",
+    "dishType": "HAMLET_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Ice": 1,
+      "Fish": 2
+    },
+    "excludedIngredientTypes": ["EGG", "INEDIBLE"],
+    "excludedSpecificIngredients": ["Dead Wobster"],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 25,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Coffee",
+    "dishType": "SHIPWRECKED_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Roasted Coffee Beans": 3
+    },
+    "excludedIngredientTypes": ["MEAT", "INEDIBLE", "FISH", "FRUIT", "VEGGIE", "ICE", "MONSTER_FOOD", "EGG"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Can only use Roasted Coffee Beans, Sweeteners or Dairy (at least 3 beans)",
+    "healthRecovered": 3,
+    "hungerRecovered": 9.375,
+    "sanityRecovered": -5
+  },
+  {
+    "name": "Creamy Potato Purée",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Garlic": 1,
+      "Potato": 2
+    },
+    "excludedIngredientTypes": ["MEAT"],
+    "excludedSpecificIngredients": ["Twigs"],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
     "sanityRecovered": 33
   }
 ]

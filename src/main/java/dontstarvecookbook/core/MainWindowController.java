@@ -139,12 +139,15 @@ public class MainWindowController implements Initializable {
 
     private void initializeListViewCellFactory() {
         dishesListView.setCellFactory(callback -> new ListCell<CrockPotDish>() {
-            private ImageView view = new ImageView();
             @Override
             protected void updateItem(CrockPotDish item, boolean empty) {
                 super.updateItem(item, empty);
                 if (!isEmpty()) {
-                    view.setImage(CrockPotDishesStorage.getInstance().getDishIcons().get(item));
+                    ImageView view = new ImageView();
+                    view.setImage(CrockPotDishesStorage.getInstance().getDishIcons().get(item.getName()));
+                    view.setFitHeight(64);
+                    view.setFitWidth(64);
+                    view.setSmooth(true);
                     setGraphic(view);
                     setText(item.getName());
                 } else {
@@ -178,8 +181,8 @@ public class MainWindowController implements Initializable {
         hungerRestoredLabel.setText(df.format(dish.getHungerRecovered()));
         sanityRestoredLabel.setText(Integer.toString(dish.getSanityRecovered()));
 
-        String path = FileUtilities.formatImagePath(dish, "png");
-        dishIconImageView.setImage(new Image(getClass().getResource(path).toExternalForm()));
+//        String path = FileUtilities.formatImagePath(dish, "png");
+        dishIconImageView.setImage(CrockPotDishesStorage.getInstance().getDishIcons().get(dish.getName()));
 
         String textStyle = "-fx-font-size: 16px;";
         String titleStyle = "-fx-font-weight: bold; -fx-font-size: 16px;";

@@ -95,7 +95,7 @@
                                           <Font name="System Bold" size="16.0" />
                                        </font>
                                     </Label>
-                                    <ImageView fx:id="dishIconImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                                    <ImageView fx:id="dishIconImageView" fitHeight="108.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" smooth="true" />
                                     <HBox prefHeight="119.0" prefWidth="338.0">
                                        <children>
                                           <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
@@ -129,6 +129,9 @@
                                              </children>
                                           </VBox>
                                        </children>
+                                       <VBox.margin>
+                                          <Insets top="15.0" />
+                                       </VBox.margin>
                                     </HBox>
                                     <VBox fx:id="infoVBox" prefHeight="150.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
                                  </children>

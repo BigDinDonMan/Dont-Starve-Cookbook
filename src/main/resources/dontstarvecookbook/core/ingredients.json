@@ -476,5 +476,11 @@
     "ingredientValues": {
       "FISH": 1.0
     }
+  },
+  {
+    "name": "Roasted Seaweed",
+    "ingredientValues": {
+      "VEGGIE": 1.0
+    }
   }
 ]

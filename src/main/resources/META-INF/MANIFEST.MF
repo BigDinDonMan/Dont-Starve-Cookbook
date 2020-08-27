@@ -1,7 +1,4 @@
 Manifest-Version: 1.0
-Main-Class: dontstarvecookbook.core.DontStarveCookbookMain
-Class-Path: javafx-fxml-12.0.2.jar javafx-fxml-12.0.2-win.jar javafx-bas
- e-12.0.2-win.jar javafx-base-12.0.2.jar javafx-controls-12.0.2-win.jar 
- javafx-graphics-12.0.2-win.jar javafx-graphics-12.0.2.jar javafx-contro
- ls-12.0.2.jar gson-1.7.1.jar
+Main-Class: dontstarvecookbook.core.Main
+Class-Path: gson-1.7.1.jar jfoenix-8.0.1.jar
 

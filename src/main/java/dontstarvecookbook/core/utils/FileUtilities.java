@@ -8,7 +8,8 @@ public class FileUtilities {
     private FileUtilities() {}
 
     public static String formatImagePath(CrockPotDish dish, String ext) {
-        String filename = dish.getName().toLowerCase().replace(' ', '-').replace("'", "");
+        String filename = dish.getName().toLowerCase().replace(' ', '-').
+                replace("'", "").replace("-(dst)", "").trim();
         return String.format("/images/crockpot-dish-icons/%s.%s", filename, ext);
     }
 
