@@ -2,10 +2,14 @@ package dontstarvecookbook.core;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import dontstarvecookbook.core.utils.FileUtilities;
+import javafx.scene.image.Image;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CrockPotDishesStorage {
 
@@ -19,6 +23,7 @@ public class CrockPotDishesStorage {
     }
 
     private List<CrockPotDish> dishes;
+    private Map<CrockPotDish, Image> dishIcons;
 
     private CrockPotDishesStorage() {
         try {
@@ -26,6 +31,17 @@ public class CrockPotDishesStorage {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+//        this.dishIcons = this.loadDishIcons();
+    }
+
+    private Map<CrockPotDish, Image> loadDishIcons() {
+        Map<CrockPotDish, Image> images = new HashMap<>();
+        for (CrockPotDish dish : this.dishes) {
+            String path = FileUtilities.formatImagePath(dish, "png");
+            images.put(dish, new Image(getClass().getResource(path).toExternalForm()));
+        }
+        return images;
     }
 
     private List<CrockPotDish> loadDishes() throws IOException {
@@ -40,5 +56,9 @@ public class CrockPotDishesStorage {
 
     public List<CrockPotDish> getDishes() {
         return dishes;
+    }
+
+    public Map<CrockPotDish, Image> getDishIcons() {
+        return dishIcons;
     }
 }

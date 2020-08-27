@@ -143,8 +143,7 @@ public class MainWindowController implements Initializable {
             protected void updateItem(CrockPotDish item, boolean empty) {
                 super.updateItem(item, empty);
                 if (!isEmpty()) {
-                    String path = FileUtilities.formatImagePath(item, "png");
-                    view.setImage(new Image(getClass().getResource(path).toExternalForm()));
+                    view.setImage(CrockPotDishesStorage.getInstance().getDishIcons().get(item));
                     setGraphic(view);
                     setText(item.getName());
                 } else {
