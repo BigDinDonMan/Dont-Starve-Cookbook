@@ -32,7 +32,7 @@ public class CrockPotDishesStorage {
             e.printStackTrace();
         }
 
-//        this.dishIcons = this.loadDishIcons();
+        this.dishIcons = this.loadDishIcons();
     }
 
     private Map<CrockPotDish, Image> loadDishIcons() {
