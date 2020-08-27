@@ -263,5 +263,107 @@
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
     "sanityRecovered": 33
+  },
+  {
+    "name": "Dragonpie",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Dragon Fruit": 1
+    },
+    "excludedIngredientTypes": ["FISH", "MEAT"],
+    "excludedSpecificIngredients": ["Asparagus", "Mandrake"],
+    "additionalNotes": "",
+    "healthRecovered": 40,
+    "hungerRecovered": 75,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Fancy Spiralled Tubers",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Potato": 1,
+      "Twigs": 1
+    },
+    "excludedIngredientTypes": ["MEAT", "FISH"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Only one filler can be inedible (e.g. Twigs)",
+    "healthRecovered": 3,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 15
+  },
+  {
+    "name": "Feijoada",
+    "dishType": "HAMLET_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Bean Bug": 3,
+      "Meat": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "If you cook all three bugs, then the last ingredient can be different than meat (currently a bug)",
+    "healthRecovered": 20,
+    "hungerRecovered": 75,
+    "sanityRecovered": 15
+  },
+  {
+    "name": "Fish Tacos",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "FISH": 0.5
+    },
+    "neededSpecificIngredients": {
+      "Corn": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Add 2 Twigs for guaranteed Fish Tacos",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Fishsticks",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "FISH": 0.5
+    },
+    "neededSpecificIngredients": {
+      "Twigs": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 40,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Fist Full of Jam",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "FRUIT": 2.0
+    },
+    "neededSpecificIngredients": {},
+    "excludedIngredientTypes": ["FISH","MEAT","VEGGIE"],
+    "excludedSpecificIngredients": ["Dragon Fruit", "Twigs"],
+    "additionalNotes": "2.5 or less Fruit value is needed (basically 4 Berries or Juicy Berries)",
+    "healthRecovered": 3,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
   }
+//  {
+//    "name": "",
+//    "dishType": "",
+//    "neededFoodValues": {},
+//    "neededSpecificIngredients": {},
+//    "excludedIngredientTypes": [],
+//    "excludedSpecificIngredients": [],
+//    "additionalNotes": "",
+//    "healthRecovered": 0,
+//    "hungerRecovered": 0,
+//    "sanityRecovered": 0
+//  }
 ]

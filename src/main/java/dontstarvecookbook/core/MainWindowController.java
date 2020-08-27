@@ -30,6 +30,7 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
+//TODO: for additional dish info, consider using something like text area
 public class MainWindowController implements Initializable {
 
     @FXML
@@ -74,15 +75,12 @@ public class MainWindowController implements Initializable {
 
     private HamburgerBasicCloseTransition hamburgerButtonTransition;
 
-    //TODO: make a hashmap containing dish and ingredient images, so I dont need to instantiate a new one every time
     //TODO: maybe use a filtered list as a source of items for the list view
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeApplicationResources();
         initializeButtonEvents();
-        initializeListViewCellFactory();
-        initializeListViewEvents();
-        initializeListViewContents();
+        initializeListView();
         initializeJFXControls();
     }
 
@@ -135,6 +133,12 @@ public class MainWindowController implements Initializable {
     private void fillListViewWithDishType(DishType t) {
         dishesListView.getItems().clear();
         dishesListView.getItems().addAll(gatherDishesByType(t));
+    }
+
+    private void initializeListView() {
+        initializeListViewCellFactory();
+        initializeListViewEvents();
+        initializeListViewContents();
     }
 
     private void initializeListViewCellFactory() {
