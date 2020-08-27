@@ -36,6 +36,7 @@ public class FoodValuesPopUpMenuController implements Initializable {
     }
 
     private void updateListView(IngredientType t) {
+        foodValuesListView.getItems().clear();
         foodValuesListView.getItems().addAll(
                 CookingIngredientsStorage.getInstance().getIngredients().stream().
                         filter(i -> i.getIngredientValues().containsKey(t)).collect(Collectors.toList())
@@ -59,7 +60,6 @@ public class FoodValuesPopUpMenuController implements Initializable {
                     view.setFitHeight(48);
                     view.setPreserveRatio(false);
                     String path = FileUtilities.formatImagePath(item, "png");
-                    System.out.println(path);
                     view.setImage(new Image(getClass().getResource(path).toExternalForm()));
 
                     String foodValue = StringUtilities.removeTrailingChars(
@@ -75,7 +75,9 @@ public class FoodValuesPopUpMenuController implements Initializable {
 
                     setGraphic(base);
                     setText(null);
-                    setTooltip(new Tooltip(item.getName()));
+                    Tooltip itemTooltip = new Tooltip(item.getName());
+                    //TODO: upgrade project Java version to 9, so we can control the show delay in the tooltip
+                    setTooltip(itemTooltip);
                 } else {
                     setGraphic(null);
                     setText(null);
@@ -93,13 +95,7 @@ public class FoodValuesPopUpMenuController implements Initializable {
         foodCategoryComboBox.setCellFactory(callback -> new IngredientTypeListCell());
         foodCategoryComboBox.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
             if (newValue != null && !newValue.equals(oldValue)) {
-                foodValuesListView.getItems().clear();
-                foodValuesListView.getItems().addAll(
-                        CookingIngredientsStorage.getInstance().getIngredients().
-                                stream().
-                                filter(i -> i.getIngredientValues().containsKey(foodCategoryComboBox.getValue())).
-                                collect(Collectors.toList())
-                );
+                updateListView(newValue);
             }
         }));
     }
