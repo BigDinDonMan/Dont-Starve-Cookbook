@@ -13,7 +13,8 @@ public class FileUtilities {
     }
 
     public static String formatImagePath(CookingIngredient ingredient, String ext) {
-        String filename = ingredient.getName().toLowerCase().replace(' ', '-').replace("'", "");
+        String filename = ingredient.getName().toLowerCase().replace(' ', '-').
+                replace("'", "").replace("-(dst)", "").trim();
         return String.format("/images/ingredient-icons/%s.%s", filename, ext);
     }
 }

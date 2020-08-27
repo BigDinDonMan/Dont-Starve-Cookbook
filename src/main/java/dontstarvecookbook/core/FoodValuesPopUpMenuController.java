@@ -29,20 +29,16 @@ public class FoodValuesPopUpMenuController implements Initializable {
     @FXML
     private ComboBox<IngredientType> foodCategoryComboBox;
 
-    private IngredientType ingredientTypeFilter;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ingredientTypeFilter = IngredientType.VEGGIE;
         initializeListViewCellFactory();
         initializeComboBox();
-        updateListView();
     }
 
-    private void updateListView() {
+    private void updateListView(IngredientType t) {
         foodValuesListView.getItems().addAll(
                 CookingIngredientsStorage.getInstance().getIngredients().stream().
-                        filter(i -> i.getIngredientValues().containsKey(ingredientTypeFilter)).collect(Collectors.toList())
+                        filter(i -> i.getIngredientValues().containsKey(t)).collect(Collectors.toList())
         );
     }
 
@@ -63,9 +59,13 @@ public class FoodValuesPopUpMenuController implements Initializable {
                     view.setFitHeight(48);
                     view.setPreserveRatio(false);
                     String path = FileUtilities.formatImagePath(item, "png");
+                    System.out.println(path);
                     view.setImage(new Image(getClass().getResource(path).toExternalForm()));
 
-                    String foodValue = StringUtilities.removeTrailingChars(df.format(item.getIngredientValues().get(ingredientTypeFilter)), '0');
+                    String foodValue = StringUtilities.removeTrailingChars(
+                            df.format(item.getIngredientValues().get(foodCategoryComboBox.getValue())),
+                            '0'
+                    );
                     Label l = new Label("Food value: " + foodValue);
 
                     BorderPane base = new BorderPane();
@@ -75,6 +75,7 @@ public class FoodValuesPopUpMenuController implements Initializable {
 
                     setGraphic(base);
                     setText(null);
+                    setTooltip(new Tooltip(item.getName()));
                 } else {
                     setGraphic(null);
                     setText(null);
@@ -90,5 +91,16 @@ public class FoodValuesPopUpMenuController implements Initializable {
         );
         foodCategoryComboBox.setButtonCell(new IngredientTypeListCell());
         foodCategoryComboBox.setCellFactory(callback -> new IngredientTypeListCell());
+        foodCategoryComboBox.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
+            if (newValue != null && !newValue.equals(oldValue)) {
+                foodValuesListView.getItems().clear();
+                foodValuesListView.getItems().addAll(
+                        CookingIngredientsStorage.getInstance().getIngredients().
+                                stream().
+                                filter(i -> i.getIngredientValues().containsKey(foodCategoryComboBox.getValue())).
+                                collect(Collectors.toList())
+                );
+            }
+        }));
     }
 }

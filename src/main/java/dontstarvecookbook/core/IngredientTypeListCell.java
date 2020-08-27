@@ -2,6 +2,7 @@ package dontstarvecookbook.core;
 
 import dontstarvecookbook.core.enums.IngredientType;
 import javafx.scene.control.ListCell;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 

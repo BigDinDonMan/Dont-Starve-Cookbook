@@ -77,6 +77,7 @@ public class MainWindowController implements Initializable {
     private HamburgerBasicCloseTransition hamburgerButtonTransition;
 
     //TODO: make a hashmap containing dish and ingredient images, so I dont need to instantiate a new one every time
+    //TODO: maybe use a filtered list as a source of items for the list view
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeButtonEvents();
