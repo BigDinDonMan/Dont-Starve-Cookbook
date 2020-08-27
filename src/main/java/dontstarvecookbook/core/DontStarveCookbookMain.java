@@ -26,8 +26,6 @@ public class DontStarveCookbookMain extends Application {
     }
 
     public static void main(String[] args) {
-        CookingIngredientsStorage.initialize();
-        CrockPotDishesStorage.initialize();
         Application.launch(args);
     }
 }

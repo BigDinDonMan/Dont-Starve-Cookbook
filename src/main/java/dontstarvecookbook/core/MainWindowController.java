@@ -80,11 +80,17 @@ public class MainWindowController implements Initializable {
     //TODO: maybe use a filtered list as a source of items for the list view
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        initializeApplicationResources();
         initializeButtonEvents();
         initializeListViewCellFactory();
         initializeListViewEvents();
         initializeListViewContents();
         initializeJFXControls();
+    }
+
+    private void initializeApplicationResources() {
+        CookingIngredientsStorage.initialize();
+        CrockPotDishesStorage.initialize();
     }
 
     private void initializeJFXControls() {
