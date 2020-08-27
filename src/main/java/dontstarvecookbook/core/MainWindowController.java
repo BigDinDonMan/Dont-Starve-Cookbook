@@ -2,13 +2,11 @@ package dontstarvecookbook.core;
 
 import com.jfoenix.controls.JFXDrawer;
 import com.jfoenix.controls.JFXHamburger;
-import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import com.jfoenix.transitions.hamburger.HamburgerBasicCloseTransition;
 import dontstarvecookbook.core.enums.DishType;
 import dontstarvecookbook.core.enums.IngredientType;
 import dontstarvecookbook.core.utils.FileUtilities;
 import dontstarvecookbook.core.utils.StringUtilities;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -23,7 +21,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
