@@ -2,6 +2,7 @@ package dontstarvecookbook.core;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import javafx.scene.image.Image;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Map;
 
 public class CookingIngredientsStorage {
 
@@ -23,6 +25,7 @@ public class CookingIngredientsStorage {
     }
 
     private List<CookingIngredient> ingredients;
+    private Map<CookingIngredient, Image> ingredientImages;
 
     private CookingIngredientsStorage() {
         try {
@@ -30,6 +33,8 @@ public class CookingIngredientsStorage {
         } catch (IOException | URISyntaxException e) {
             e.printStackTrace();
         }
+
+        this.ingredientImages = this.loadIngredientIcons();
     }
 
     private List<CookingIngredient> loadIngredients() throws URISyntaxException, IOException {
@@ -42,8 +47,16 @@ public class CookingIngredientsStorage {
         return new Gson().fromJson(s, new TypeToken<List<CookingIngredient>>() {}.getType());
     }
 
+    private Map<CookingIngredient, Image> loadIngredientIcons() {
+        return null;
+    }
+
 
     public List<CookingIngredient> getIngredients() {
         return this.ingredients;
+    }
+
+    public Map<CookingIngredient, Image> getIngredientImages() {
+        return ingredientImages;
     }
 }

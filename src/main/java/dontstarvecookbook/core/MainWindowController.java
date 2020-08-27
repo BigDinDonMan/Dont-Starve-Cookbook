@@ -6,6 +6,7 @@ import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition;
 import com.jfoenix.transitions.hamburger.HamburgerBasicCloseTransition;
 import dontstarvecookbook.core.enums.DishType;
 import dontstarvecookbook.core.enums.IngredientType;
+import dontstarvecookbook.core.utils.FileUtilities;
 import dontstarvecookbook.core.utils.StringUtilities;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +23,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
@@ -137,8 +139,7 @@ public class MainWindowController implements Initializable {
             protected void updateItem(CrockPotDish item, boolean empty) {
                 super.updateItem(item, empty);
                 if (!isEmpty()) {
-                    String filename = item.getName().toLowerCase().replace(' ', '-').replace("'", "");
-                    String path = String.format("/images/crockpot-dish-icons/%s.png", filename);
+                    String path = FileUtilities.formatImagePath(item, "png");
                     view.setImage(new Image(getClass().getResource(path).toExternalForm()));
                     setGraphic(view);
                     setText(item.getName());
@@ -173,8 +174,7 @@ public class MainWindowController implements Initializable {
         hungerRestoredLabel.setText(df.format(dish.getHungerRecovered()));
         sanityRestoredLabel.setText(Integer.toString(dish.getSanityRecovered()));
 
-        String filename = dish.getName().toLowerCase().replace(' ', '-').replace("'", "");
-        String path = String.format("/images/crockpot-dish-icons/%s.png", filename);
+        String path = FileUtilities.formatImagePath(dish, "png");
         dishIconImageView.setImage(new Image(getClass().getResource(path).toExternalForm()));
 
         String textStyle = "-fx-font-size: 16px;";
