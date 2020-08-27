@@ -2,6 +2,7 @@ package dontstarvecookbook.core;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import dontstarvecookbook.core.utils.FileUtilities;
 import javafx.scene.image.Image;
 
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -48,7 +50,12 @@ public class CookingIngredientsStorage {
     }
 
     private Map<CookingIngredient, Image> loadIngredientIcons() {
-        return null;
+        Map<CookingIngredient, Image> images = new HashMap<>();
+        for (CookingIngredient ingredient : this.ingredients) {
+            String imagePath = FileUtilities.formatImagePath(ingredient, "png");
+            images.put(ingredient, new Image(getClass().getResource(imagePath).toExternalForm()));
+        }
+        return images;
     }
 
 
