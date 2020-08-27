@@ -59,8 +59,7 @@ public class FoodValuesPopUpMenuController implements Initializable {
                     view.setFitWidth(48);
                     view.setFitHeight(48);
                     view.setPreserveRatio(false);
-                    String path = FileUtilities.formatImagePath(item, "png");
-                    view.setImage(new Image(getClass().getResource(path).toExternalForm()));
+                    view.setImage(CookingIngredientsStorage.getInstance().getIngredientImages().get(item));
 
                     String foodValue = StringUtilities.removeTrailingChars(
                             df.format(item.getIngredientValues().get(foodCategoryComboBox.getValue())),
