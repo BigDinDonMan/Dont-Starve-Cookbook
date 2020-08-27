@@ -3,10 +3,7 @@ package dontstarvecookbook.core;
 import dontstarvecookbook.core.enums.DishType;
 import dontstarvecookbook.core.enums.IngredientType;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CrockPotDish {
     private String name;
@@ -70,5 +67,36 @@ public class CrockPotDish {
 
     public int getSanityRecovered() {
         return sanityRecovered;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj instanceof CrockPotDish) {
+            CrockPotDish other = (CrockPotDish)obj;
+            return this.name.equals(other.name);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(
+                this.name,
+                this.neededFoodValues,
+                this.additionalNotes,
+                this.dishType,
+                this.excludedIngredientTypes,
+                this.excludedSpecificIngredients,
+                this.healthRecovered,
+                this.hungerRecovered,
+                this.neededSpecificIngredients,
+                this.sanityRecovered
+        );
     }
 }
