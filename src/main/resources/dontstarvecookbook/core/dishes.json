@@ -1,5 +1,20 @@
 [
   {
+    "name": "Barnacle Linguine",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Barnacle": 2,
+      "Vegetables": 2
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Recipe actually says it needs 2 vegetables, not a specific vegetable value (its listed as 1.0 because minimum veggie value is 0.5)",
+    "healthRecovered": 10,
+    "hungerRecovered": 75,
+    "sanityRecovered": 20
+  },
+  {
     "name": "Pierogi",
     "dishType": "ROG_SPECIFIC",
     "neededFoodValues": {
@@ -7,12 +22,28 @@
       "VEGGIE": 0.5,
       "EGG": 1.0
     },
-    "neededSpecificIngredients": [],
+    "neededSpecificIngredients": {},
     "excludedIngredientTypes": [],
     "excludedSpecificIngredients": ["Mandrake", "Twigs"],
     "additionalNotes": "",
     "healthRecovered": 40,
     "hungerRecovered": 37.5,
     "sanityRecovered": 5
+  },
+  {
+    "name": "Banana Pop",
+    "dishType": "SHIPWRECKED_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Banana": 1,
+      "Ice": 1,
+      "Twigs": 1
+    },
+    "excludedIngredientTypes": ["FISH", "MEAT"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 12.5,
+    "sanityRecovered": 33
   }
 ]

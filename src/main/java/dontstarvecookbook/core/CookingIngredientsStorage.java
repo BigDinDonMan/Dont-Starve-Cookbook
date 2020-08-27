@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//TODO: load everything with threads
 public class CookingIngredientsStorage {
 
     private static CookingIngredientsStorage instance;

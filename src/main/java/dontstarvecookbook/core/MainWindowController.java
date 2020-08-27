@@ -26,6 +26,7 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 
@@ -191,14 +192,20 @@ public class MainWindowController implements Initializable {
         VBox.setMargin(neededFoodValuesTitle, titleInsets);
 
         df.setMaximumFractionDigits(2);
-        dish.getNeededFoodValues().forEach((ingredientType, foodValue) -> {
-            String foodValueStr = StringUtilities.removeTrailingChars(df.format(foodValue), '0');
-            String ingrName = IngredientType.getPrettyName(ingredientType, false);
-            String content = String.format("- %sx %s value", foodValueStr, ingrName);
-            Label l = createLabel(content, textStyle, true);
+        if (dish.getNeededFoodValues().isEmpty()) {
+            Label l = createLabel("- None\n", textStyle, true);
             infoVBox.getChildren().add(l);
             VBox.setMargin(l, textInsets);
-        });
+        } else {
+            dish.getNeededFoodValues().forEach((ingredientType, foodValue) -> {
+                String foodValueStr = StringUtilities.removeTrailingChars(df.format(foodValue), '0');
+                String ingrName = IngredientType.getPrettyName(ingredientType, false);
+                String content = String.format("- %sx %s value", foodValueStr, ingrName);
+                Label l = createLabel(content, textStyle, true);
+                infoVBox.getChildren().add(l);
+                VBox.setMargin(l, textInsets);
+            });
+        }
 
         Label neededIngredientsTitle = createLabel("Needed specific ingredients: ", titleStyle, true);
         infoVBox.getChildren().add(neededIngredientsTitle);
@@ -209,8 +216,8 @@ public class MainWindowController implements Initializable {
             infoVBox.getChildren().add(l);
             VBox.setMargin(l, textInsets);
         } else {
-            for (String ingredient : dish.getNeededSpecificIngredients()) {
-                Label l = createLabel("- No " + ingredient, textStyle, true);
+            for (Map.Entry<String, Integer> ingredient : dish.getNeededSpecificIngredients().entrySet()) {
+                Label l = createLabel(String.format("- %sx %s", ingredient.getValue(), ingredient.getKey()), textStyle, true);
                 infoVBox.getChildren().add(l);
                 VBox.setMargin(l, textInsets);
             }

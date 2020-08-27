@@ -9,7 +9,7 @@ public class CrockPotDish {
     private String name;
     private DishType dishType;
     private Map<IngredientType, Double> neededFoodValues;
-    private List<String> neededSpecificIngredients;
+    private Map<String, Integer> neededSpecificIngredients;
     private List<IngredientType> excludedIngredientTypes;
     private List<String> excludedSpecificIngredients;
     private String additionalNotes;
@@ -23,7 +23,7 @@ public class CrockPotDish {
         this.name = name;
         this.dishType = type;
         this.neededFoodValues = new HashMap<>();
-        this.neededSpecificIngredients = new ArrayList<>();
+        this.neededSpecificIngredients = new HashMap<>();
         this.excludedIngredientTypes = new ArrayList<>();
         this.excludedSpecificIngredients = new ArrayList<>();
         this.additionalNotes = "";
@@ -41,7 +41,7 @@ public class CrockPotDish {
         return neededFoodValues;
     }
 
-    public List<String> getNeededSpecificIngredients() {
+    public Map<String, Integer> getNeededSpecificIngredients() {
         return neededSpecificIngredients;
     }
 

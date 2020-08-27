@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//TODO: load everything with threads
 public class CrockPotDishesStorage {
 
     private static CrockPotDishesStorage instance;
