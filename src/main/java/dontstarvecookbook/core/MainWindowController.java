@@ -7,6 +7,8 @@ import dontstarvecookbook.core.enums.DishType;
 import dontstarvecookbook.core.enums.IngredientType;
 import dontstarvecookbook.core.utils.FileUtilities;
 import dontstarvecookbook.core.utils.StringUtilities;
+import javafx.collections.FXCollections;
+import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -75,6 +77,8 @@ public class MainWindowController implements Initializable {
 
     private HamburgerBasicCloseTransition hamburgerButtonTransition;
 
+    private FilteredList<CrockPotDish> filteredDishList;
+
     //TODO: maybe use a filtered list as a source of items for the list view
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -119,20 +123,12 @@ public class MainWindowController implements Initializable {
     }
 
     private void initializeButtonEvents() {
-        baseGameSpecificToggleButton.setOnAction(e -> fillListViewWithDishType(DishType.ROG_SPECIFIC));
-        hamletSpecificToggleButton.setOnAction(e -> fillListViewWithDishType(DishType.HAMLET_SPECIFIC));
-        shipwreckedSpecificToggleButton.setOnAction(e -> fillListViewWithDishType(DishType.SHIPWRECKED_SPECIFIC));
-        warlySpecificToggleButton.setOnAction(e -> fillListViewWithDishType(DishType.WARLY_SPECIFIC));
-        togetherSpecificToggleButton.setOnAction(e -> fillListViewWithDishType(DishType.TOGETHER_SPECIFIC));
-        showAllRecipesButton.setOnAction(e -> {
-            dishesListView.getItems().clear();
-            dishesListView.getItems().addAll(CrockPotDishesStorage.getInstance().getDishes());
-        });
-    }
-
-    private void fillListViewWithDishType(DishType t) {
-        dishesListView.getItems().clear();
-        dishesListView.getItems().addAll(gatherDishesByType(t));
+        togetherSpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.TOGETHER_SPECIFIC)));
+        warlySpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.WARLY_SPECIFIC)));
+        shipwreckedSpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.SHIPWRECKED_SPECIFIC)));
+        hamletSpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.HAMLET_SPECIFIC)));
+        baseGameSpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.ROG_SPECIFIC)));
+        showAllRecipesButton.setOnAction(e -> filteredDishList.setPredicate(p -> true));
     }
 
     private void initializeListView() {
@@ -163,7 +159,11 @@ public class MainWindowController implements Initializable {
     }
 
     private void initializeListViewContents() {
-        dishesListView.getItems().addAll(CrockPotDishesStorage.getInstance().getDishes());
+        this.filteredDishList = new FilteredList<>(
+                FXCollections.observableArrayList(CrockPotDishesStorage.getInstance().getDishes()),
+                p -> true
+        );
+        dishesListView.setItems(this.filteredDishList);
     }
 
     private void initializeListViewEvents() {
@@ -276,10 +276,5 @@ public class MainWindowController implements Initializable {
         l.setStyle(style);
         l.setWrapText(wrap);
         return l;
-    }
-
-    private List<CrockPotDish> gatherDishesByType(DishType type) {
-        return CrockPotDishesStorage.getInstance().getDishes().
-                stream().filter(dish -> dish.getDishType().equals(type)).collect(Collectors.toList());
     }
 }

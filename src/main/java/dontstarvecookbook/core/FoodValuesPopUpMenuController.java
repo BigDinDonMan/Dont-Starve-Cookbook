@@ -2,6 +2,8 @@ package dontstarvecookbook.core;
 
 import dontstarvecookbook.core.enums.IngredientType;
 import dontstarvecookbook.core.utils.StringUtilities;
+import javafx.collections.FXCollections;
+import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -25,18 +27,19 @@ public class FoodValuesPopUpMenuController implements Initializable {
     @FXML
     private ComboBox<IngredientType> foodCategoryComboBox;
 
+    private FilteredList<CookingIngredient> ingredientsFilteredList;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initializeListViewCellFactory();
+        initializeListViewItems();
         initializeComboBox();
     }
 
-    private void updateListView(IngredientType t) {
-        foodValuesListView.getItems().clear();
-        foodValuesListView.getItems().addAll(
-                CookingIngredientsStorage.getInstance().getIngredients().stream().
-                        filter(i -> i.getIngredientValues().containsKey(t)).collect(Collectors.toList())
-        );
+    private void initializeListViewItems() {
+        this.ingredientsFilteredList = new FilteredList<>(
+                FXCollections.observableArrayList(CookingIngredientsStorage.getInstance().getIngredients()), p -> false);
+        this.foodValuesListView.setItems(this.ingredientsFilteredList);
     }
 
     private void initializeListViewCellFactory() {
@@ -49,7 +52,7 @@ public class FoodValuesPopUpMenuController implements Initializable {
             @Override
             protected void updateItem(CookingIngredient item, boolean empty) {
                 super.updateItem(item, empty);
-                this.setAlignment(Pos.CENTER_LEFT);
+                setAlignment(Pos.CENTER_LEFT);
                 if (!isEmpty()) {
                     ImageView view = new ImageView();
                     view.setFitWidth(48);
@@ -90,7 +93,7 @@ public class FoodValuesPopUpMenuController implements Initializable {
         foodCategoryComboBox.setCellFactory(callback -> new IngredientTypeListCell());
         foodCategoryComboBox.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
             if (newValue != null && !newValue.equals(oldValue)) {
-                updateListView(newValue);
+                ingredientsFilteredList.setPredicate(p -> p.getIngredientValues().containsKey(newValue));
             }
         }));
     }
