@@ -85,7 +85,7 @@ public class FoodValuesPopUpMenuController implements Initializable {
     }
 
     private void initializeComboBox() {
-        Predicate<IngredientType> typePredicate = i -> !i.equals(IngredientType.BUG) && !i.equals(IngredientType.ICE);
+        Predicate<IngredientType> typePredicate = i -> !i.equals(IngredientType.BUG);
         foodCategoryComboBox.getItems().addAll(
                 Arrays.stream(IngredientType.values()).filter(typePredicate).collect(Collectors.toList())
         );

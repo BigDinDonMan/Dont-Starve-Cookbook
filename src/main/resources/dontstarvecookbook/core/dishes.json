@@ -242,8 +242,8 @@
     "neededSpecificIngredients": {
       "Roasted Coffee Beans": 3
     },
-    "excludedIngredientTypes": ["MEAT", "INEDIBLE", "FISH", "FRUIT", "VEGGIE", "ICE", "MONSTER_FOOD", "EGG"],
-    "excludedSpecificIngredients": [],
+    "excludedIngredientTypes": ["MEAT", "INEDIBLE", "FISH", "FRUIT", "VEGGIE", "MONSTER_FOOD", "EGG"],
+    "excludedSpecificIngredients": ["Ice"],
     "additionalNotes": "Can only use Roasted Coffee Beans, Sweeteners or Dairy (at least 3 beans)",
     "healthRecovered": 3,
     "hungerRecovered": 9.375,
@@ -353,6 +353,298 @@
     "healthRecovered": 3,
     "hungerRecovered": 37.5,
     "sanityRecovered": 5
+  },
+  {
+    "name": "Flower Salad",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 1.5
+    },
+    "neededSpecificIngredients": {
+      "Cactus Flower": 1
+    },
+    "excludedIngredientTypes": ["MEAT","FISH","FRUIT","INEDIBLE","SWEETENER","EGG"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 40,
+    "hungerRecovered": 12.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Froggle Bunwich",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Frog Legs": 1,
+      "Vegetable": 1
+    },
+    "excludedIngredientTypes": ["EGG","SWEETENER"],
+    "excludedSpecificIngredients": ["Mandrake"],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Fruit Medley",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "FRUIT": 3.0
+    },
+    "neededSpecificIngredients": {},
+    "excludedIngredientTypes": ["MEAT","FISH","EGG","VEGGIE"],
+    "excludedSpecificIngredients": ["Dragon Fruit"],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 25,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Guacamole",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Moleworm": 1,
+      "Cactus Flesh": 1
+    },
+    "excludedIngredientTypes": ["FRUIT"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 0
+  },
+  {
+    "name": "Guacamole (DST)",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Moleworm": 1,
+      "Ripe Stone Fruit": 1
+    },
+    "excludedIngredientTypes": ["FRUIT"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "You can still use Cactus Flesh, DST just allows to use Ripe Stone Fruit instead",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 0
+  },
+  {
+    "name": "Gummy Cake",
+    "dishType": "HAMLET_SPECIFIC",
+    "neededFoodValues": {
+      "SWEETENER": 1.0
+    },
+    "neededSpecificIngredients": {
+      "Gummy Slug": 1
+    },
+    "excludedIngredientTypes": ["MEAT","FISH"],
+    "excludedSpecificIngredients": ["Mandrake"],
+    "additionalNotes": "",
+    "healthRecovered": -3,
+    "hungerRecovered": 150,
+    "sanityRecovered": -5
+  },
+  {
+    "name": "Hard Shell Tacos",
+    "dishType": "HAMLET_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Weevole Carapace": 2,
+      "Vegetable": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": ["Asparagus","Mandrake"],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Honey Ham",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "MEAT": 1.5
+    },
+    "neededSpecificIngredients": {
+      "Honey": 1
+    },
+    "excludedIngredientTypes": ["INEDIBLE"],
+    "excludedSpecificIngredients": ["Tallbird Egg", "Mandrake", "Moleworm"],
+    "additionalNotes": "",
+    "healthRecovered": 30,
+    "hungerRecovered": 75,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Honey Nuggets",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "MEAT": 0.5
+    },
+    "neededSpecificIngredients": {
+      "Honey": 1
+    },
+    "excludedIngredientTypes": ["INEDIBLE"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Meats value needs to be lower than 1.5",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Ice Cream",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "DAIRY": 1.0,
+      "SWEETENER": 1.0
+    },
+    "neededSpecificIngredients": {
+      "Ice": 1
+    },
+    "excludedIngredientTypes": ["MEAT","FISH","EGG","VEGGIE","INEDIBLE"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 0,
+    "hungerRecovered": 25,
+    "sanityRecovered": 50
+  },
+  {
+    "name": "Iced Tea",
+    "dishType": "HAMLET_SPECIFIC",
+    "neededFoodValues": {
+      "SWEETENER": 1.0
+    },
+    "neededSpecificIngredients": {
+      "Orange Piko": 2,
+      "Ice": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 3,
+    "hungerRecovered": 12.5,
+    "sanityRecovered": 33
+  },
+  {
+    "name": "Jellybeans",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Royal Jelly": 1
+    },
+    "excludedIngredientTypes": ["MONSTER_FOOD","INEDIBLE"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Recovers 2 health every 2 seconds, with initial heal for 2",
+    "healthRecovered": 122,
+    "hungerRecovered": 0,
+    "sanityRecovered": 0
+  },
+  {
+    "name": "Jelly-O Pop",
+    "dishType": "SHIPWRECKED_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Jellyfish": 1,
+      "Ice": 1,
+      "Inedible": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": ["Dead Wobster"],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 12.5,
+    "sanityRecovered": 0
+  },
+  {
+    "name": "Jelly Salad",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {
+      "SWEETENER": 2.0
+    },
+    "neededSpecificIngredients": {
+      "Leafy Meat": 2
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 0,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 50
+  },
+  {
+    "name": "Kabobs",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "MEAT": 0.5
+    },
+    "neededSpecificIngredients": {
+      "Twigs": 1
+    },
+    "excludedIngredientTypes": ["FISH"],
+    "excludedSpecificIngredients": ["Mandrake","Moleworm"],
+    "additionalNotes": "",
+    "healthRecovered": 3,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Mandrake Soup",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Mandrake": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Mandrake needs to be raw",
+    "healthRecovered": 100,
+    "hungerRecovered": 150,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Meatballs",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "MEAT": 0.5
+    },
+    "neededSpecificIngredients": {},
+    "excludedIngredientTypes": ["INEDIBLE"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 3,
+    "hungerRecovered": 62.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Meaty Stew",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "MEAT": 3.0
+    },
+    "neededSpecificIngredients": {},
+    "excludedIngredientTypes": ["SWEETENER","INEDIBLE"],
+    "excludedSpecificIngredients": ["Mandrake","Moleworm","Tallbird Egg"],
+    "additionalNotes": "",
+    "healthRecovered": 12,
+    "hungerRecovered": 150,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Melonsicle",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Ice": 1,
+      "Watermelon": 1,
+      "Twigs": 1
+    },
+    "excludedIngredientTypes": ["EGG","MEAT","VEGGIE","FISH"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 3,
+    "hungerRecovered": 12.5,
+    "sanityRecovered": 20
   }
 //  {
 //    "name": "",

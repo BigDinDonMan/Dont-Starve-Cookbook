@@ -3,7 +3,7 @@ package dontstarvecookbook.core.enums;
 import java.util.HashMap;
 
 public enum IngredientType {
-    FRUIT, MEAT, MONSTER_FOOD, VEGGIE, FISH, EGG, SWEETENER, DAIRY, BUG, INEDIBLE, ICE;
+    FRUIT, MEAT, MONSTER_FOOD, VEGGIE, FISH, EGG, SWEETENER, DAIRY, BUG, INEDIBLE;
 
     private static HashMap<IngredientType, String> prettyNames;
     private static HashMap<IngredientType, String> pluralNames;
@@ -20,13 +20,11 @@ public enum IngredientType {
         prettyNames.put(IngredientType.DAIRY, "Dairy");
         prettyNames.put(IngredientType.BUG, "Bug");
         prettyNames.put(IngredientType.INEDIBLE, "Inedible");
-        prettyNames.put(IngredientType.ICE, "Ice");
 
         pluralNames = new HashMap<>();
         pluralNames.put(IngredientType.FRUIT, "Fruit");
         pluralNames.put(IngredientType.VEGGIE, "Vegetables");
         pluralNames.put(IngredientType.INEDIBLE, "Inedibles");
-        pluralNames.put(IngredientType.ICE, "Ice");
         pluralNames.put(IngredientType.MONSTER_FOOD, "Monster Foods");
         pluralNames.put(IngredientType.DAIRY, "Dairy Products");
         pluralNames.put(IngredientType.SWEETENER, "Sweeteners");

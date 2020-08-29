@@ -1,9 +1,7 @@
 [
   {
     "name": "Ice",
-    "ingredientValues": {
-      "ICE": 1.0
-    }
+    "ingredientValues": {}
   },
   {
     "name": "Carrot",
