@@ -645,17 +645,658 @@
     "healthRecovered": 3,
     "hungerRecovered": 12.5,
     "sanityRecovered": 20
+  },
+  {
+    "name": "Monster Lasagna",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "MONSTER_FOOD": 2.0
+    },
+    "neededSpecificIngredients": {},
+    "excludedIngredientTypes": ["INEDIBLE"],
+    "excludedSpecificIngredients": ["Twigs"],
+    "additionalNotes": "",
+    "healthRecovered": -20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": -20
+  },
+  {
+    "name": "Leafy Meatloaf",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Leafy Meat": 2
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 8,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Nettle Rolls",
+    "dishType": "HAMLET_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Nettle": 3
+    },
+    "excludedIngredientTypes": ["VEGGIE","FRUIT"],
+    "excludedSpecificIngredients": ["Mandrake"],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 25,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Powdercake",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Corn": 1,
+      "Twigs": 1,
+      "Honey": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "DON'T MAKE IT. Seriously, don't.",
+    "healthRecovered": -3,
+    "hungerRecovered": 0,
+    "sanityRecovered": 0
+  },
+  {
+    "name": "Pumpkin Cookies",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "SWEETENER": 2.0
+    },
+    "neededSpecificIngredients": {
+      "Pumpkin": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": ["Mandrake"],
+    "additionalNotes": "Adding more than 2 sweeteners may result in Taffy",
+    "healthRecovered": 0,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 15
+  },
+  {
+    "name": "Ratatouille",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 0.5
+    },
+    "neededSpecificIngredients": {},
+    "excludedIngredientTypes": ["MEAT","FISH"],
+    "excludedSpecificIngredients": ["Dragon Fruit","Twigs","Butterfly Wings","Mandrake"],
+    "additionalNotes": "",
+    "healthRecovered": 3,
+    "hungerRecovered": 25,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Salsa Fresca",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Toma Root": 1,
+      "Onion": 1
+    },
+    "excludedIngredientTypes": ["EGG","MEAT","INEDIBLE"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 3,
+    "hungerRecovered": 25,
+    "sanityRecovered": 33
+  },
+  {
+    "name": "Seafood Gumbo",
+    "dishType": "SHIPWRECKED_SPECIFIC",
+    "neededFoodValues": {
+      "FISH": 2.0
+    },
+    "neededSpecificIngredients": {},
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Needs at least 2.0 fish food value",
+    "healthRecovered": 40,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 20
+  },
+  {
+    "name": "Shark Fin Soup",
+    "dishType": "SHIPWRECKED_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Shark Fin": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": ["Seaweed", "Ice"],
+    "additionalNotes": "",
+    "healthRecovered": 40,
+    "hungerRecovered": 12.5,
+    "sanityRecovered": -10
+  },
+  {
+    "name": "Snake Bone Soup",
+    "dishType": "HAMLET_SPECIFIC",
+    "neededFoodValues": {
+      "MEAT": 2.0
+    },
+    "neededSpecificIngredients": {
+      "Snake Bone": 2
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "You can put more than 1 Monster meat because of priority",
+    "healthRecovered": 40,
+    "hungerRecovered": 25,
+    "sanityRecovered": 10
+  },
+  {
+    "name": "Spicy Chili",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "MEAT": 1.5,
+      "VEGGIE": 1.5
+    },
+    "neededSpecificIngredients": {},
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 0
+  },
+  {
+    "name": "Spicy Vegetable Stinger",
+    "dishType": "HAMLET_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 1.5
+    },
+    "neededSpecificIngredients": {
+      "Radish": 1,
+      "Ice": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Can also use Asparagus instead of Radish",
+    "healthRecovered": 3,
+    "hungerRecovered": 25,
+    "sanityRecovered": 33
+  },
+  {
+    "name": "Vegetable Stinger",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 1.5
+    },
+    "neededSpecificIngredients": {
+      "Toma Root": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Can also use Asparagus instead of Toma Root",
+    "healthRecovered": 3,
+    "hungerRecovered": 25,
+    "sanityRecovered": 33
+  },
+  {
+    "name": "Steamed Ham Sandwich",
+    "dishType": "HAMLET_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 1.0
+    },
+    "neededSpecificIngredients": {
+      "Meat": 1,
+      "Foliage": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": ["Twigs","Mandrake"],
+    "additionalNotes": "You'll get Spicy Chilli if you use more than 1 Meat",
+    "healthRecovered": 40,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 15
+  },
+  {
+    "name": "Stuffed Eggplant",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Eggplant": 1,
+      "Vegetable": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 3,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Asparagazpacho (DST)",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Asparagus": 2,
+      "Ice": 2
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Don't Starve Together Exclusive",
+    "healthRecovered": 3,
+    "hungerRecovered": 25,
+    "sanityRecovered": 10
+  },
+  {
+    "name": "Bone Bouillon (DST)",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Bone Shards": 2,
+      "Onion": 1
+    },
+    "excludedIngredientTypes": ["INEDIBLE"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 32,
+    "hungerRecovered": 150,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Fish Cordon Bleu (DST)",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {
+      "FISH": 1.0
+    },
+    "neededSpecificIngredients": {
+      "Frog Legs": 2
+    },
+    "excludedIngredientTypes": ["INEDIBLE"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": -10
+  },
+  {
+    "name": "Fresh Fruit Crepes",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {
+      "FRUIT": 1.5
+    },
+    "neededSpecificIngredients": {
+      "Butter": 1,
+      "Honey": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 60,
+    "hungerRecovered": 150,
+    "sanityRecovered": 15
+  },
+  {
+    "name": "Glow Berry Mousse (DST)",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {
+      "FRUIT": 2.0
+    },
+    "neededSpecificIngredients": {
+      "Glow Berry": 1
+    },
+    "excludedIngredientTypes": ["MEAT","INEDIBLE"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Can also replace a single Glow Berry with 2 Lesser Glow Berries",
+    "healthRecovered": 3,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 10
+  },
+  {
+    "name": "Grim Galette (DST)",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Potato": 1,
+      "Nightmare Fuel": 2,
+      "Onion": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Swaps player's health and sanity levels",
+    "healthRecovered": 1,
+    "hungerRecovered": 25,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Hot Dragon Chili Salad (DST)",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Dragon Fruit": 1,
+      "Pepper": 1
+    },
+    "excludedIngredientTypes": ["MEAT","INEDIBLE","EGG","FISH"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": -3,
+    "hungerRecovered": 25,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Monster Tartare (DST)",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 0.5,
+      "EGG": 0.5,
+      "MONSTER_FOOD": 2.0
+    },
+    "neededSpecificIngredients": {},
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": -20,
+    "hungerRecovered": 62.5,
+    "sanityRecovered": -20
+  },
+  {
+    "name": "Monster Tartare",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 0.5,
+      "EGG": 0.5,
+      "MONSTER_FOOD": 2.0
+    },
+    "neededSpecificIngredients": {},
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 3,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 10
+  },
+  {
+    "name": "Moqueca (DST)",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Toma Root": 1,
+      "Onion": 1,
+      "Fish": 1
+    },
+    "excludedIngredientTypes": ["INEDIBLE"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 60,
+    "hungerRecovered": 112.5,
+    "sanityRecovered": 33
+  },
+  {
+    "name": "Mussel Bouillabaise",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 2.0
+    },
+    "neededSpecificIngredients": {
+      "Mussel": 2
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Mussels must be uncooked",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 15
+  },
+  {
+    "name": "Puffed Potato Soufflé (DST)",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Egg": 1,
+      "Potato": 2
+    },
+    "excludedIngredientTypes": ["MEAT","FISH","INEDIBLE"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 15
+  },
+  {
+    "name": "Sweet Potato Souffle (DST)",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {
+      "EGG": 2.0
+    },
+    "neededSpecificIngredients": {
+      "Sweet Potato": 2
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "The potatoes must be raw",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 15
+  },
+  {
+    "name": "Volt Goat Chaud-Froid (DST)",
+    "dishType": "WARLY_SPECIFIC",
+    "neededFoodValues": {
+      "SWEETENER": 2.0
+    },
+    "neededSpecificIngredients": {
+      "Volt Goat Horn": 1
+    },
+    "excludedIngredientTypes": ["MEAT","FISH"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 3,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 10
+  },
+  {
+    "name": "Stuffed Fish Heads",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Barnacles": 1,
+      "Fish": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 75,
+    "sanityRecovered": 0
+  },
+  {
+    "name": "Stuffed Pepper Poppers",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {
+      "MEAT": 1.5
+    },
+    "neededSpecificIngredients": {
+      "Pepper": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": ["Twigs"],
+    "additionalNotes": "",
+    "healthRecovered": 30,
+    "hungerRecovered": 25,
+    "sanityRecovered": -5
+  },
+  {
+    "name": "Surf 'n' Turf",
+    "dishType": "SHIPWRECKED_SPECIFIC",
+    "neededFoodValues": {
+      "FISH": 1.5,
+      "MEAT":2.5
+    },
+    "neededSpecificIngredients": {},
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": ["Ice"],
+    "additionalNotes": "",
+    "healthRecovered": 60,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 33
+  },
+  {
+    "name": "Taffy",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "SWEETENER": 3.0
+    },
+    "neededSpecificIngredients": {},
+    "excludedIngredientTypes": ["MEAT"],
+    "excludedSpecificIngredients": ["Royal Jelly"],
+    "additionalNotes": "",
+    "healthRecovered": -3,
+    "hungerRecovered": 25,
+    "sanityRecovered": 15
+  },
+  {
+    "name": "Tea",
+    "dishType": "HAMLET_SPECIFIC",
+    "neededFoodValues": {
+      "SWEETENER": 1.0
+    },
+    "neededSpecificIngredients": {
+      "Orange Piko": 2
+    },
+    "excludedIngredientTypes": ["INEDIBLE","VEGGIE","MEAT","FISH"],
+    "excludedSpecificIngredients": ["Ice"],
+    "additionalNotes": "",
+    "healthRecovered": 3,
+    "hungerRecovered": 12.5,
+    "sanityRecovered": 33
+  },
+  {
+    "name": "Trail Mix",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Roasted Birchnut": 1,
+      "Berries": 1,
+      "Fruit": 1
+    },
+    "excludedIngredientTypes": ["DAIRY","VEGGIE","MEAT","FISH","EGG"],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 30,
+    "hungerRecovered": 12.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Tropical Bouillabaisse",
+    "dishType": "SHIPWRECKED_SPECIFIC",
+    "neededFoodValues": {
+      "VEGGIE": 1.0
+    },
+    "neededSpecificIngredients": {
+      "Purple Grouper": 1,
+      "Pierrot Fish": 1,
+      "Neon Quattro": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 15
+  },
+  {
+    "name": "Turkey Dinner",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "MEAT": 0.5,
+      "FRUIT": 0.5
+    },
+    "neededSpecificIngredients": {
+      "Drumstick": 2
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "Drumsticks must be raw. Also, you can use Veggies instead of fruits.",
+    "healthRecovered": 20,
+    "hungerRecovered": 75,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Unagi",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Eel": 1,
+      "Lichen": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 20,
+    "hungerRecovered": 18.75,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Veggie Burger",
+    "dishType": "TOGETHER_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Leafy Meat": 1,
+      "Onion": 1,
+      "Vegetable": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 30,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 33
+  },
+  {
+    "name": "Waffles",
+    "dishType": "ROG_SPECIFIC",
+    "neededFoodValues": {
+      "EGG": 0.5
+    },
+    "neededSpecificIngredients": {
+      "Berries": 1,
+      "Butter": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": ["Mandrake"],
+    "additionalNotes": "",
+    "healthRecovered": 60,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 5
+  },
+  {
+    "name": "Wobster Dinner",
+    "dishType": "SHIPWRECKED_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Dead Wobster": 1,
+      "Butter": 1
+    },
+    "excludedIngredientTypes": ["FISH","MEAT"],
+    "excludedSpecificIngredients": ["Ice"],
+    "additionalNotes": "",
+    "healthRecovered": 60,
+    "hungerRecovered": 37.5,
+    "sanityRecovered": 50
+  },
+  {
+    "name": "Wobster Bisque",
+    "dishType": "SHIPWRECKED_SPECIFIC",
+    "neededFoodValues": {},
+    "neededSpecificIngredients": {
+      "Ice": 1,
+      "Dead Wobster": 1
+    },
+    "excludedIngredientTypes": [],
+    "excludedSpecificIngredients": [],
+    "additionalNotes": "",
+    "healthRecovered": 60,
+    "hungerRecovered": 25,
+    "sanityRecovered": 10
   }
-//  {
-//    "name": "",
-//    "dishType": "",
-//    "neededFoodValues": {},
-//    "neededSpecificIngredients": {},
-//    "excludedIngredientTypes": [],
-//    "excludedSpecificIngredients": [],
-//    "additionalNotes": "",
-//    "healthRecovered": 0,
-//    "hungerRecovered": 0,
-//    "sanityRecovered": 0
-//  }
 ]
