@@ -19,7 +19,6 @@ import java.util.ResourceBundle;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-//TODO: download the rest of ingredient images (veggies are already done)
 public class FoodValuesPopUpMenuController implements Initializable {
 
     @FXML
