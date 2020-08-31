@@ -15,11 +15,9 @@ import javafx.scene.layout.BorderPane;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.util.Arrays;
 import java.util.ResourceBundle;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
+//TODO: make list view scroll to the beginning on combo box change
 public class FoodValuesPopUpMenuController implements Initializable {
 
     @FXML

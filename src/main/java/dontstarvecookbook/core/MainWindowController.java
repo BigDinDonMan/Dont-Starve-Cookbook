@@ -26,11 +26,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.util.Comparator;
 import java.util.Map;
 import java.util.ResourceBundle;
 
 //TODO: for additional dish info, consider using something like text area
+//TODO: make list view scroll to the beginning on button press
 public class MainWindowController implements Initializable {
 
     @FXML
