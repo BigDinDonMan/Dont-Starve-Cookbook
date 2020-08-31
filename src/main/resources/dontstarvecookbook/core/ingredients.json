@@ -480,5 +480,17 @@
     "ingredientValues": {
       "VEGGIE": 1.0
     }
+  },
+  {
+    "name": "Bean Bugs",
+    "ingredientValues": {
+      "BUG": 1.0
+    }
+  },
+  {
+    "name": "Gummy Slug",
+    "ingredientValues": {
+      "BUG": 1.0
+    }
   }
 ]

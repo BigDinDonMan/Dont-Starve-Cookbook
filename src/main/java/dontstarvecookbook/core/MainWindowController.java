@@ -6,6 +6,7 @@ import com.jfoenix.transitions.hamburger.HamburgerBasicCloseTransition;
 import dontstarvecookbook.core.enums.DishType;
 import dontstarvecookbook.core.enums.IngredientType;
 import dontstarvecookbook.core.utils.StringUtilities;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
@@ -25,6 +26,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.util.Comparator;
 import java.util.Map;
 import java.util.ResourceBundle;
 
@@ -85,8 +87,11 @@ public class MainWindowController implements Initializable {
     }
 
     private void initializeApplicationResources() {
-        CookingIngredientsStorage.initialize();
-        CrockPotDishesStorage.initialize();
+        Thread t = new Thread(() -> {
+            CrockPotDishesStorage.initialize();
+            Platform.runLater(this::initializeListViewContents);
+        });
+        t.start();
     }
 
     private void initializeJFXControls() {
@@ -130,7 +135,6 @@ public class MainWindowController implements Initializable {
     private void initializeListView() {
         initializeListViewCellFactory();
         initializeListViewEvents();
-        initializeListViewContents();
     }
 
     private void initializeListViewCellFactory() {
@@ -159,7 +163,7 @@ public class MainWindowController implements Initializable {
                 FXCollections.observableArrayList(CrockPotDishesStorage.getInstance().getDishes()),
                 p -> true
         );
-        dishesListView.setItems(this.filteredDishList);
+        dishesListView.setItems(this.filteredDishList.sorted());
     }
 
     private void initializeListViewEvents() {

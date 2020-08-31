@@ -2,6 +2,7 @@ package dontstarvecookbook.core;
 
 import dontstarvecookbook.core.enums.IngredientType;
 import dontstarvecookbook.core.utils.StringUtilities;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
@@ -36,9 +37,13 @@ public class FoodValuesPopUpMenuController implements Initializable {
     }
 
     private void initializeListViewItems() {
-        this.ingredientsFilteredList = new FilteredList<>(
-                FXCollections.observableArrayList(CookingIngredientsStorage.getInstance().getIngredients()), p -> false);
-        this.foodValuesListView.setItems(this.ingredientsFilteredList);
+        Thread t = new Thread(() -> {
+            CookingIngredientsStorage.initialize();
+            this.ingredientsFilteredList = new FilteredList<>(
+                    FXCollections.observableArrayList(CookingIngredientsStorage.getInstance().getIngredients()), p -> false);
+            Platform.runLater(() -> this.foodValuesListView.setItems(this.ingredientsFilteredList));
+        });
+        t.start();
     }
 
     private void initializeListViewCellFactory() {
@@ -84,10 +89,7 @@ public class FoodValuesPopUpMenuController implements Initializable {
     }
 
     private void initializeComboBox() {
-        Predicate<IngredientType> typePredicate = i -> !i.equals(IngredientType.BUG);
-        foodCategoryComboBox.getItems().addAll(
-                Arrays.stream(IngredientType.values()).filter(typePredicate).collect(Collectors.toList())
-        );
+        foodCategoryComboBox.getItems().addAll(IngredientType.values());
         foodCategoryComboBox.setButtonCell(new IngredientTypeListCell());
         foodCategoryComboBox.setCellFactory(callback -> new IngredientTypeListCell());
         foodCategoryComboBox.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
