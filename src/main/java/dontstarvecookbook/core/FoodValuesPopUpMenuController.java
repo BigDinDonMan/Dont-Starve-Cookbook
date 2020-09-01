@@ -93,6 +93,7 @@ public class FoodValuesPopUpMenuController implements Initializable {
         foodCategoryComboBox.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
             if (newValue != null && !newValue.equals(oldValue)) {
                 ingredientsFilteredList.setPredicate(p -> p.getIngredientValues().containsKey(newValue));
+                foodValuesListView.scrollTo(0);
             }
         }));
     }
