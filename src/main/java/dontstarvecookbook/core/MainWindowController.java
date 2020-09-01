@@ -28,6 +28,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
 //TODO: for additional dish info, consider using something like text area
 //TODO: make list view scroll to the beginning on button press
@@ -124,12 +125,17 @@ public class MainWindowController implements Initializable {
     }
 
     private void initializeButtonEvents() {
-        togetherSpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.TOGETHER_SPECIFIC)));
-        warlySpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.WARLY_SPECIFIC)));
-        shipwreckedSpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.SHIPWRECKED_SPECIFIC)));
-        hamletSpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.HAMLET_SPECIFIC)));
-        baseGameSpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.ROG_SPECIFIC)));
-        showAllRecipesButton.setOnAction(e -> filteredDishList.setPredicate(p -> true));
+        togetherSpecificToggleButton.setOnAction(e -> setDishPredicateAndScrollToBeginning(p -> p.getDishType().equals(DishType.TOGETHER_SPECIFIC)));
+        warlySpecificToggleButton.setOnAction(e -> setDishPredicateAndScrollToBeginning(p -> p.getDishType().equals(DishType.WARLY_SPECIFIC)));
+        shipwreckedSpecificToggleButton.setOnAction(e -> setDishPredicateAndScrollToBeginning(p -> p.getDishType().equals(DishType.SHIPWRECKED_SPECIFIC)));
+        hamletSpecificToggleButton.setOnAction(e -> setDishPredicateAndScrollToBeginning(p -> p.getDishType().equals(DishType.HAMLET_SPECIFIC)));
+        baseGameSpecificToggleButton.setOnAction(e -> setDishPredicateAndScrollToBeginning(p -> p.getDishType().equals(DishType.ROG_SPECIFIC)));
+        showAllRecipesButton.setOnAction(e -> setDishPredicateAndScrollToBeginning(p -> true));
+    }
+
+    private void setDishPredicateAndScrollToBeginning(Predicate<CrockPotDish> dishPredicate) {
+        filteredDishList.setPredicate(dishPredicate);
+        dishesListView.scrollTo(0);
     }
 
     private void initializeListView() {
