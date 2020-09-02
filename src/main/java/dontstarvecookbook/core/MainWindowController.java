@@ -103,7 +103,7 @@ public class MainWindowController implements Initializable {
     private void initializeCustomControls() {
         //initialization code for jfxdrawer
         try {
-            Parent p = FXMLLoader.load(getClass().getResource("/dontstarvecookbook/fxml/foodvaluespopupmenu.fxml"));
+            Parent p = FXMLLoader.load(getClass().getResource("/dontstarvecookbook/fxml/lookuppopupmenu.fxml"));
             foodValuesJfxDrawer.setSidePane(p);
         } catch (IOException ex) {
             ex.printStackTrace();

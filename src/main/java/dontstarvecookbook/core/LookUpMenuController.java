@@ -17,7 +17,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.ResourceBundle;
 
-public class FoodValuesPopUpMenuController implements Initializable {
+public class LookUpMenuController implements Initializable {
 
     @FXML
     private ListView<CookingIngredient> foodValuesListView;
