@@ -30,8 +30,6 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
 
-//TODO: for additional dish info, consider using something like text area
-//TODO: make list view scroll to the beginning on button press
 public class MainWindowController implements Initializable {
 
     @FXML
@@ -78,7 +76,6 @@ public class MainWindowController implements Initializable {
 
     private FilteredList<CrockPotDish> filteredDishList;
 
-    //TODO: maybe use a filtered list as a source of items for the list view
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeApplicationResources();
