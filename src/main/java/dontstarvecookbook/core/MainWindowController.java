@@ -18,14 +18,15 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import org.controlsfx.control.textfield.CustomTextField;
 
 import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 //TODO:
 public class MainWindowController implements Initializable {
@@ -71,10 +72,13 @@ public class MainWindowController implements Initializable {
     private JFXDrawer foodValuesJfxDrawer;
     @FXML
     private JFXHamburger showFoodValuesHamburger;
+    @FXML
+    private CustomTextField searchBarTextField;
 
     private HamburgerBasicCloseTransition hamburgerButtonTransition;
 
     private FilteredList<CrockPotDish> filteredDishList;
+    private HashSet<CrockPotDish> searchBarFilteredDishes;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -85,7 +89,7 @@ public class MainWindowController implements Initializable {
     private void initializeApplicationView() {
         initializeButtonEvents();
         initializeListView();
-        initializeJFXControls();
+        initializeCustomControls();
     }
 
     private void initializeApplicationResources() {
@@ -96,7 +100,7 @@ public class MainWindowController implements Initializable {
         t.start();
     }
 
-    private void initializeJFXControls() {
+    private void initializeCustomControls() {
         //initialization code for jfxdrawer
         try {
             Parent p = FXMLLoader.load(getClass().getResource("/dontstarvecookbook/fxml/foodvaluespopupmenu.fxml"));
@@ -123,6 +127,38 @@ public class MainWindowController implements Initializable {
                 foodValuesJfxDrawer.setMouseTransparent(false);
             }
         });
+
+        searchBarFilteredDishes = new HashSet<>();
+        searchBarTextField.setTooltip(new Tooltip("If ingredient name is 2 or more words then separate with '-' instead of spaces"));
+        searchBarTextField.textProperty().addListener(((observable, oldValue, newValue) -> {
+            if (newValue == null || newValue.isEmpty()) {
+                setDishPredicateAndScrollToBeginning(p -> true);
+            } else {
+                displayIngredientSearchResults(newValue);
+            }
+        }));
+    }
+
+    private void displayIngredientSearchResults(String inputString) {
+        searchBarFilteredDishes.clear();
+        String[] ingredientNames = inputString.split(" ");
+        CookingIngredientsStorage instance = CookingIngredientsStorage.getInstance();
+        CrockPotDishesStorage dishesInstance = CrockPotDishesStorage.getInstance();
+        for (String name : ingredientNames) {
+            final String lowerCaseName = name.toLowerCase();
+            Optional<CookingIngredient> ingredient = instance.findIngredient(
+                    i -> i.getName().toLowerCase().equals(lowerCaseName));
+            ingredient.ifPresent(i -> {
+                //gather the dishes using this ingredients or this ingredients type values
+                List<CrockPotDish> validDishes = dishesInstance.getDishes().stream().
+                        filter(dish -> dish.getNeededSpecificIngredients().containsKey(StringUtilities.capitalize(lowerCaseName))
+                                || dish.getNeededFoodValues().keySet().containsAll(i.getIngredientValues().keySet())).
+                        collect(Collectors.toList());
+                searchBarFilteredDishes.addAll(validDishes);
+            });
+        }
+        filteredDishList.setPredicate(p -> searchBarFilteredDishes.contains(p));
+        dishesListView.scrollTo(0);
     }
 
     private void initializeButtonEvents() {
@@ -179,6 +215,7 @@ public class MainWindowController implements Initializable {
     private void setDishPredicateAndScrollToBeginning(Predicate<CrockPotDish> dishPredicate) {
         filteredDishList.setPredicate(dishPredicate);
         dishesListView.scrollTo(0);
+        searchBarTextField.clear();
     }
 
     private void displayDishInformation(CrockPotDish dish) {

@@ -14,4 +14,9 @@ public class StringUtilities {
         return sb.reverse().toString();
     }
 
+    public static String capitalize(String s) {
+        if (s == null || s.isEmpty()) return "";
+        if (s.length() == 1) return Character.toString(Character.toUpperCase(s.charAt(0)));
+        return Character.toUpperCase(s.charAt(0)) + s.substring(1);
+    }
 }
