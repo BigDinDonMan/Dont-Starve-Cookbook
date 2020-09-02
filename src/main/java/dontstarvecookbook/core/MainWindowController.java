@@ -14,10 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
@@ -30,10 +27,13 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
 
+//TODO:
 public class MainWindowController implements Initializable {
 
     @FXML
     private VBox dishDisplayContainer;
+    @FXML
+    private ScrollPane dishInfoScrollPane;
 
     @FXML
     private VBox infoVBox;
@@ -79,6 +79,10 @@ public class MainWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeApplicationResources();
+        initializeApplicationView();
+    }
+
+    private void initializeApplicationView() {
         initializeButtonEvents();
         initializeListView();
         initializeJFXControls();
@@ -130,11 +134,6 @@ public class MainWindowController implements Initializable {
         showAllRecipesButton.setOnAction(e -> setDishPredicateAndScrollToBeginning(p -> true));
     }
 
-    private void setDishPredicateAndScrollToBeginning(Predicate<CrockPotDish> dishPredicate) {
-        filteredDishList.setPredicate(dishPredicate);
-        dishesListView.scrollTo(0);
-    }
-
     private void initializeListView() {
         initializeListViewCellFactory();
         initializeListViewEvents();
@@ -173,7 +172,13 @@ public class MainWindowController implements Initializable {
         dishesListView.setOnMouseClicked(e -> {
             CrockPotDish item = dishesListView.getSelectionModel().getSelectedItem();
             if (item != null) displayDishInformation(item);
+            dishInfoScrollPane.setVvalue(0.0d);
         });
+    }
+
+    private void setDishPredicateAndScrollToBeginning(Predicate<CrockPotDish> dishPredicate) {
+        filteredDishList.setPredicate(dishPredicate);
+        dishesListView.scrollTo(0);
     }
 
     private void displayDishInformation(CrockPotDish dish) {
