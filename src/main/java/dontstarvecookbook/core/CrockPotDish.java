@@ -16,6 +16,7 @@ public class CrockPotDish {
     private float hungerRecovered;
     private int healthRecovered;
     private int sanityRecovered;
+    private int crockPotPriority;
 
     public CrockPotDish() {}
 
@@ -69,6 +70,10 @@ public class CrockPotDish {
         return sanityRecovered;
     }
 
+    public int getCrockPotPriority() {
+        return crockPotPriority;
+    }
+
     @Override
     public String toString() {
         return this.name;
@@ -99,4 +104,5 @@ public class CrockPotDish {
                 this.sanityRecovered
         );
     }
+
 }
