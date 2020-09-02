@@ -11,10 +11,12 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class LookUpMenuController implements Initializable {
@@ -23,15 +25,21 @@ public class LookUpMenuController implements Initializable {
     private ListView<CookingIngredient> foodValuesListView;
     @FXML
     private ComboBox<IngredientType> foodCategoryComboBox;
+    @FXML
+    private VBox favouriteFoodsVBox;
 
     private FilteredList<CookingIngredient> ingredientsFilteredList;
+
+    private List<CharacterFavouriteFoodInfo> characterFavouriteFoodInfos;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initializeListViewCellFactory();
         initializeListViewItems();
         initializeComboBox();
+        initializeFavouriteFoodsView();
     }
+
 
     private void initializeListViewItems() {
         Thread t = new Thread(() -> {
@@ -95,5 +103,18 @@ public class LookUpMenuController implements Initializable {
                 foodValuesListView.scrollTo(0);
             }
         }));
+    }
+
+    private void initializeFavouriteFoodsView() {
+        loadFavouriteFoods();
+        displayFavouriteFoods();
+    }
+
+    private void loadFavouriteFoods() {
+
+    }
+
+    private void displayFavouriteFoods() {
+
     }
 }
