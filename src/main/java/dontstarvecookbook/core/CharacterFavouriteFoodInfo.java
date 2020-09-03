@@ -23,4 +23,9 @@ public class CharacterFavouriteFoodInfo {
     public boolean isCrockPotDish() {
         return crockPotDish;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Favourite food of %s is %s", this.characterName, this.foodName);
+    }
 }

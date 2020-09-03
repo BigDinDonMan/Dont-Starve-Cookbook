@@ -6,7 +6,7 @@
   },
   {
     "characterName": "Willow",
-    "foodName": "Spicy Chilli",
+    "foodName": "Spicy Chili",
     "crockPotDish": true
   },
   {
@@ -56,8 +56,8 @@
   },
   {
     "characterName": "Warly",
-    "foodName": null,
-    "crockPotDish": true
+    "foodName": "None",
+    "crockPotDish": false
   },
   {
     "characterName": "Wormwood",

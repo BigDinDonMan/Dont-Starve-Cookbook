@@ -1,5 +1,7 @@
 package dontstarvecookbook.core;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import dontstarvecookbook.core.enums.IngredientType;
 import dontstarvecookbook.core.utils.StringUtilities;
 import javafx.application.Platform;
@@ -11,8 +13,11 @@ import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -106,15 +111,29 @@ public class LookUpMenuController implements Initializable {
     }
 
     private void initializeFavouriteFoodsView() {
-        loadFavouriteFoods();
+        try {
+            loadFavouriteFoods();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         displayFavouriteFoods();
     }
 
-    private void loadFavouriteFoods() {
-
+    @SuppressWarnings("ResultOfMethodCallIgnored")
+    private void loadFavouriteFoods() throws IOException {
+        String s = "";
+        try (InputStream is = getClass().getResourceAsStream("/dontstarvecookbook/core/favourite_foods.json")) {
+            byte[] bytes = new byte[is.available()];
+            is.read(bytes, 0, bytes.length);
+            s = new String(bytes);
+        }
+        this.characterFavouriteFoodInfos = new Gson().fromJson(s, new TypeToken<List<CharacterFavouriteFoodInfo>>(){}.getType());
     }
 
     private void displayFavouriteFoods() {
-
+        this.characterFavouriteFoodInfos.forEach(info -> {
+            CharacterFavouriteFoodInfoDisplay display = new CharacterFavouriteFoodInfoDisplay(info);
+            favouriteFoodsVBox.getChildren().add(display);
+        });
     }
 }
