@@ -1,0 +1,87 @@
+[
+  {
+    "characterName": "Wilson",
+    "foodName": "Bacon and Eggs",
+    "crockPotDish": true
+  },
+  {
+    "characterName": "Willow",
+    "foodName": "Spicy Chili",
+    "crockPotDish": true
+  },
+  {
+    "characterName": "Wolfgang",
+    "foodName": "Roasted Potato",
+    "crockPotDish": false
+  },
+  {
+    "characterName": "Wendy",
+    "foodName": "Banana Pop",
+    "crockPotDish": true
+  },
+  {
+    "characterName": "WX-78",
+    "foodName": "Butter Muffin",
+    "crockPotDish": true
+  },
+  {
+    "characterName": "Wickerbottom",
+    "foodName": "Surf 'n' Turf",
+    "crockPotDish": true
+  },
+  {
+    "characterName": "Woodie",
+    "foodName": "Honey Nuggets",
+    "crockPotDish": true
+  },
+  {
+    "characterName": "Wes",
+    "foodName": "Fresh Fruit Crepes",
+    "crockPotDish": true
+  },
+  {
+    "characterName": "Maxwell",
+    "foodName": "Lobster Dinner",
+    "crockPotDish": true
+  },
+  {
+    "characterName": "Wigfrid",
+    "foodName": "Turkey Dinner",
+    "crockPotDish": true
+  },
+  {
+    "characterName": "Webber",
+    "foodName": "Ice Cream",
+    "crockPotDish": true
+  },
+  {
+    "characterName": "Warly",
+    "foodName": "None",
+    "crockPotDish": false
+  },
+  {
+    "characterName": "Wormwood",
+    "foodName": "Cooked Banana",
+    "crockPotDish": false
+  },
+  {
+    "characterName": "Winona",
+    "foodName": "Spicy Vegetable Stinger",
+    "crockPotDish": true
+  },
+  {
+    "characterName": "Wortox",
+    "foodName": "Pomegranate",
+    "crockPotDish": false
+  },
+  {
+    "characterName": "Walter",
+    "foodName": "Trail Mix",
+    "crockPotDish": true
+  },
+  {
+    "characterName": "Wurt",
+    "foodName": "Durian",
+    "crockPotDish": false
+  }
+]

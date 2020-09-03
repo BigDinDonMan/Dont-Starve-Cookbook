@@ -5,7 +5,9 @@ import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerBasicCloseTransition;
 import dontstarvecookbook.core.enums.DishType;
 import dontstarvecookbook.core.enums.IngredientType;
+import dontstarvecookbook.core.utils.FXUtilities;
 import dontstarvecookbook.core.utils.StringUtilities;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
@@ -13,26 +15,28 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.util.Duration;
+import org.controlsfx.control.textfield.CustomTextField;
 
 import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
-//TODO: for additional dish info, consider using something like text area
+//TODO:
 public class MainWindowController implements Initializable {
 
     @FXML
     private VBox dishDisplayContainer;
+    @FXML
+    private ScrollPane dishInfoScrollPane;
 
     @FXML
     private VBox infoVBox;
@@ -70,29 +74,38 @@ public class MainWindowController implements Initializable {
     private JFXDrawer foodValuesJfxDrawer;
     @FXML
     private JFXHamburger showFoodValuesHamburger;
+    @FXML
+    private CustomTextField searchBarTextField;
 
     private HamburgerBasicCloseTransition hamburgerButtonTransition;
 
     private FilteredList<CrockPotDish> filteredDishList;
+    private HashSet<CrockPotDish> searchBarFilteredDishes;
 
-    //TODO: maybe use a filtered list as a source of items for the list view
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeApplicationResources();
+        initializeApplicationView();
+    }
+
+    private void initializeApplicationView() {
         initializeButtonEvents();
         initializeListView();
-        initializeJFXControls();
+        initializeCustomControls();
     }
 
     private void initializeApplicationResources() {
-        CookingIngredientsStorage.initialize();
-        CrockPotDishesStorage.initialize();
+        Thread t = new Thread(() -> {
+            CrockPotDishesStorage.initialize();
+            Platform.runLater(this::initializeListViewContents);
+        });
+        t.start();
     }
 
-    private void initializeJFXControls() {
+    private void initializeCustomControls() {
         //initialization code for jfxdrawer
         try {
-            Parent p = FXMLLoader.load(getClass().getResource("/dontstarvecookbook/fxml/foodvaluespopupmenu.fxml"));
+            Parent p = FXMLLoader.load(getClass().getResource("/dontstarvecookbook/fxml/lookuppopupmenu.fxml"));
             foodValuesJfxDrawer.setSidePane(p);
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -116,21 +129,54 @@ public class MainWindowController implements Initializable {
                 foodValuesJfxDrawer.setMouseTransparent(false);
             }
         });
+
+        searchBarFilteredDishes = new HashSet<>();
+        Tooltip tooltip = new Tooltip("If ingredient name is 2 or more words then separate with '-' instead of spaces");
+        FXUtilities.hackTooltipTimer(tooltip, new Duration(50));
+        searchBarTextField.setTooltip(tooltip);
+        searchBarTextField.textProperty().addListener(((observable, oldValue, newValue) -> {
+            if (newValue == null || newValue.isEmpty()) {
+                setDishPredicateAndScrollToBeginning(p -> true);
+            } else {
+                displayIngredientSearchResults(newValue);
+            }
+        }));
+    }
+
+    private void displayIngredientSearchResults(String inputString) {
+        searchBarFilteredDishes.clear();
+        String[] ingredientNames = inputString.split(" ");
+        CookingIngredientsStorage instance = CookingIngredientsStorage.getInstance();
+        CrockPotDishesStorage dishesInstance = CrockPotDishesStorage.getInstance();
+        for (String name : ingredientNames) {
+            final String lowerCaseName = name.toLowerCase();
+            Optional<CookingIngredient> ingredient = instance.findIngredient(
+                    i -> i.getName().toLowerCase().equals(lowerCaseName));
+            ingredient.ifPresent(i -> {
+                //gather the dishes using this ingredients or this ingredients type values
+                List<CrockPotDish> validDishes = dishesInstance.getDishes().stream().
+                        filter(dish -> dish.getNeededSpecificIngredients().containsKey(StringUtilities.capitalize(lowerCaseName))
+                                || dish.getNeededFoodValues().keySet().containsAll(i.getIngredientValues().keySet())).
+                        collect(Collectors.toList());
+                searchBarFilteredDishes.addAll(validDishes);
+            });
+        }
+        filteredDishList.setPredicate(p -> searchBarFilteredDishes.contains(p));
+        dishesListView.scrollTo(0);
     }
 
     private void initializeButtonEvents() {
-        togetherSpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.TOGETHER_SPECIFIC)));
-        warlySpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.WARLY_SPECIFIC)));
-        shipwreckedSpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.SHIPWRECKED_SPECIFIC)));
-        hamletSpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.HAMLET_SPECIFIC)));
-        baseGameSpecificToggleButton.setOnAction(e -> filteredDishList.setPredicate(p -> p.getDishType().equals(DishType.ROG_SPECIFIC)));
-        showAllRecipesButton.setOnAction(e -> filteredDishList.setPredicate(p -> true));
+        togetherSpecificToggleButton.setOnAction(e -> setDishPredicateAndScrollToBeginning(p -> p.getDishType().equals(DishType.TOGETHER_SPECIFIC)));
+        warlySpecificToggleButton.setOnAction(e -> setDishPredicateAndScrollToBeginning(p -> p.getDishType().equals(DishType.WARLY_SPECIFIC)));
+        shipwreckedSpecificToggleButton.setOnAction(e -> setDishPredicateAndScrollToBeginning(p -> p.getDishType().equals(DishType.SHIPWRECKED_SPECIFIC)));
+        hamletSpecificToggleButton.setOnAction(e -> setDishPredicateAndScrollToBeginning(p -> p.getDishType().equals(DishType.HAMLET_SPECIFIC)));
+        baseGameSpecificToggleButton.setOnAction(e -> setDishPredicateAndScrollToBeginning(p -> p.getDishType().equals(DishType.ROG_SPECIFIC)));
+        showAllRecipesButton.setOnAction(e -> setDishPredicateAndScrollToBeginning(p -> true));
     }
 
     private void initializeListView() {
         initializeListViewCellFactory();
         initializeListViewEvents();
-        initializeListViewContents();
     }
 
     private void initializeListViewCellFactory() {
@@ -159,14 +205,21 @@ public class MainWindowController implements Initializable {
                 FXCollections.observableArrayList(CrockPotDishesStorage.getInstance().getDishes()),
                 p -> true
         );
-        dishesListView.setItems(this.filteredDishList);
+        dishesListView.setItems(this.filteredDishList.sorted());
     }
 
     private void initializeListViewEvents() {
         dishesListView.setOnMouseClicked(e -> {
             CrockPotDish item = dishesListView.getSelectionModel().getSelectedItem();
             if (item != null) displayDishInformation(item);
+            dishInfoScrollPane.setVvalue(0.0d);
         });
+    }
+
+    private void setDishPredicateAndScrollToBeginning(Predicate<CrockPotDish> dishPredicate) {
+        filteredDishList.setPredicate(dishPredicate);
+        dishesListView.scrollTo(0);
+        searchBarTextField.clear();
     }
 
     private void displayDishInformation(CrockPotDish dish) {

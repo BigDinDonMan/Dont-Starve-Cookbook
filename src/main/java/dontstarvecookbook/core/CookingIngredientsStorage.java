@@ -11,6 +11,8 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.function.Predicate;
 
 //TODO: load everything with threads
 public class CookingIngredientsStorage {
@@ -63,5 +65,9 @@ public class CookingIngredientsStorage {
 
     public Map<CookingIngredient, Image> getIngredientImages() {
         return ingredientImages;
+    }
+
+    public Optional<CookingIngredient> findIngredient(Predicate<CookingIngredient> predicate) {
+        return this.ingredients.stream().filter(predicate).findFirst();
     }
 }

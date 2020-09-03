@@ -1,44 +1,62 @@
 package dontstarvecookbook.core;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import dontstarvecookbook.core.enums.IngredientType;
+import dontstarvecookbook.core.utils.FXUtilities;
 import dontstarvecookbook.core.utils.StringUtilities;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
-import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
-public class FoodValuesPopUpMenuController implements Initializable {
+public class LookUpMenuController implements Initializable {
 
     @FXML
     private ListView<CookingIngredient> foodValuesListView;
     @FXML
     private ComboBox<IngredientType> foodCategoryComboBox;
+    @FXML
+    private VBox favouriteFoodsVBox;
 
     private FilteredList<CookingIngredient> ingredientsFilteredList;
+
+    private List<CharacterFavouriteFoodInfo> characterFavouriteFoodInfos;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initializeListViewCellFactory();
         initializeListViewItems();
         initializeComboBox();
+        initializeFavouriteFoodsView();
     }
 
+
     private void initializeListViewItems() {
-        this.ingredientsFilteredList = new FilteredList<>(
-                FXCollections.observableArrayList(CookingIngredientsStorage.getInstance().getIngredients()), p -> false);
-        this.foodValuesListView.setItems(this.ingredientsFilteredList);
+        Thread t = new Thread(() -> {
+            CookingIngredientsStorage.initialize();
+            this.ingredientsFilteredList = new FilteredList<>(
+                    FXCollections.observableArrayList(CookingIngredientsStorage.getInstance().getIngredients()), p -> false);
+            Platform.runLater(() -> this.foodValuesListView.setItems(this.ingredientsFilteredList));
+        });
+        t.start();
     }
 
     private void initializeListViewCellFactory() {
@@ -73,6 +91,7 @@ public class FoodValuesPopUpMenuController implements Initializable {
                     setGraphic(base);
                     setText(null);
                     Tooltip itemTooltip = new Tooltip(item.getName());
+                    FXUtilities.hackTooltipTimer(itemTooltip, new Duration(50));
                     //TODO: upgrade project Java version to 9, so we can control the show delay in the tooltip
                     setTooltip(itemTooltip);
                 } else {
@@ -84,16 +103,43 @@ public class FoodValuesPopUpMenuController implements Initializable {
     }
 
     private void initializeComboBox() {
-        Predicate<IngredientType> typePredicate = i -> !i.equals(IngredientType.BUG);
-        foodCategoryComboBox.getItems().addAll(
-                Arrays.stream(IngredientType.values()).filter(typePredicate).collect(Collectors.toList())
-        );
+        foodCategoryComboBox.getItems().addAll(IngredientType.values());
         foodCategoryComboBox.setButtonCell(new IngredientTypeListCell());
         foodCategoryComboBox.setCellFactory(callback -> new IngredientTypeListCell());
         foodCategoryComboBox.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
             if (newValue != null && !newValue.equals(oldValue)) {
                 ingredientsFilteredList.setPredicate(p -> p.getIngredientValues().containsKey(newValue));
+                foodValuesListView.scrollTo(0);
             }
         }));
+    }
+
+    private void initializeFavouriteFoodsView() {
+        try {
+            loadFavouriteFoods();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        displayFavouriteFoods();
+    }
+
+    @SuppressWarnings("ResultOfMethodCallIgnored")
+    private void loadFavouriteFoods() throws IOException {
+        String s = "";
+        try (InputStream is = getClass().getResourceAsStream("/dontstarvecookbook/core/favourite_foods.json")) {
+            byte[] bytes = new byte[is.available()];
+            is.read(bytes, 0, bytes.length);
+            s = new String(bytes);
+        }
+        this.characterFavouriteFoodInfos = new Gson().fromJson(s, new TypeToken<List<CharacterFavouriteFoodInfo>>(){}.getType());
+    }
+
+    private void displayFavouriteFoods() {
+        Insets displayInsets = new Insets(0, 5, 10, 5);
+        this.characterFavouriteFoodInfos.forEach(info -> {
+            CharacterFavouriteFoodInfoDisplay display = new CharacterFavouriteFoodInfoDisplay(info);
+            favouriteFoodsVBox.getChildren().add(display);
+            VBox.setMargin(display, displayInsets);
+        });
     }
 }

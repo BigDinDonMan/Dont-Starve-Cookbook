@@ -12,7 +12,8 @@
     "additionalNotes": "",
     "healthRecovered": 10,
     "hungerRecovered": 75,
-    "sanityRecovered": 20
+    "sanityRecovered": 20,
+    "crockPotPriority": 25
   },
   {
     "name": "Pierogi",
@@ -28,7 +29,8 @@
     "additionalNotes": "",
     "healthRecovered": 40,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 5
   },
   {
     "name": "Banana Pop",
@@ -44,7 +46,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 12.5,
-    "sanityRecovered": 33
+    "sanityRecovered": 33,
+    "crockPotPriority": 20
   },
   {
     "name": "Asparagus Soup",
@@ -60,7 +63,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 18.75,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 10
   },
   {
     "name": "Asparagus Soup (DST)",
@@ -76,7 +80,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 18.75,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 10
   },
   {
     "name": "Bacon and Eggs",
@@ -91,7 +96,8 @@
     "additionalNotes": "Meat value of more than 1.0 is needed, so 1.25 is enough",
     "healthRecovered": 20,
     "hungerRecovered": 75,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 10
   },
   {
     "name": "Barnacle Nigiri",
@@ -108,7 +114,8 @@
     "additionalNotes": "",
     "healthRecovered": 40,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 30
   },
   {
     "name": "Barnacle Pita",
@@ -124,7 +131,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 25
   },
   {
     "name": "Beefy Greens",
@@ -139,7 +147,8 @@
     "additionalNotes": "",
     "healthRecovered": 40,
     "hungerRecovered": 75,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 25
   },
   {
     "name": "Bisque",
@@ -154,7 +163,8 @@
     "additionalNotes": "Cannot use anything else than 3 Limpets and 1 Ice",
     "healthRecovered": 60,
     "hungerRecovered": 18.75,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 30
   },
   {
     "name": "Butter Muffin",
@@ -170,7 +180,8 @@
     "additionalNotes": "Can also use Moon Moth Wings",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 1
   },
   {
     "name": "California Roll",
@@ -186,7 +197,8 @@
     "additionalNotes": "Seaweed needs to be raw. If playing DST, can also use Kelp Fronds.",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 10
+    "sanityRecovered": 10,
+    "crockPotPriority": 20
   },
   {
     "name": "Caviar",
@@ -202,7 +214,8 @@
     "additionalNotes": "Adding Twigs may result in Fishsticks, corn - Fish Tacos, fish - Seafood Gumbo",
     "healthRecovered": 3,
     "hungerRecovered": 12.5,
-    "sanityRecovered": 33
+    "sanityRecovered": 33,
+    "crockPotPriority": 20
   },
   {
     "name": "Ceviche",
@@ -218,7 +231,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 25,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 20
   },
   {
     "name": "Ceviche (DST)",
@@ -233,7 +247,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 25,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 20
   },
   {
     "name": "Coffee",
@@ -247,7 +262,8 @@
     "additionalNotes": "Can only use Roasted Coffee Beans, Sweeteners or Dairy (at least 3 beans)",
     "healthRecovered": 3,
     "hungerRecovered": 9.375,
-    "sanityRecovered": -5
+    "sanityRecovered": -5,
+    "crockPotPriority": 30
   },
   {
     "name": "Creamy Potato Purée",
@@ -262,7 +278,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 33
+    "sanityRecovered": 33,
+    "crockPotPriority": 20
   },
   {
     "name": "Dragonpie",
@@ -276,7 +293,8 @@
     "additionalNotes": "",
     "healthRecovered": 40,
     "hungerRecovered": 75,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 1
   },
   {
     "name": "Fancy Spiralled Tubers",
@@ -291,7 +309,8 @@
     "additionalNotes": "Only one filler can be inedible (e.g. Twigs)",
     "healthRecovered": 3,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 15
+    "sanityRecovered": 15,
+    "crockPotPriority": 10
   },
   {
     "name": "Feijoada",
@@ -306,7 +325,8 @@
     "additionalNotes": "If you cook all three bugs, then the last ingredient can be different than meat (currently a bug)",
     "healthRecovered": 20,
     "hungerRecovered": 75,
-    "sanityRecovered": 15
+    "sanityRecovered": 15,
+    "crockPotPriority": 30
   },
   {
     "name": "Fish Tacos",
@@ -322,7 +342,8 @@
     "additionalNotes": "Add 2 Twigs for guaranteed Fish Tacos",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 10
   },
   {
     "name": "Fishsticks",
@@ -338,7 +359,8 @@
     "additionalNotes": "",
     "healthRecovered": 40,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 10
   },
   {
     "name": "Fist Full of Jam",
@@ -352,7 +374,8 @@
     "additionalNotes": "2.5 or less Fruit value is needed (basically 4 Berries or Juicy Berries)",
     "healthRecovered": 3,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 0
   },
   {
     "name": "Flower Salad",
@@ -368,7 +391,8 @@
     "additionalNotes": "",
     "healthRecovered": 40,
     "hungerRecovered": 12.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 10
   },
   {
     "name": "Froggle Bunwich",
@@ -383,7 +407,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 1
   },
   {
     "name": "Fruit Medley",
@@ -397,7 +422,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 25,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 0
   },
   {
     "name": "Guacamole",
@@ -412,7 +438,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 0
+    "sanityRecovered": 0,
+    "crockPotPriority": 10
   },
   {
     "name": "Guacamole (DST)",
@@ -443,7 +470,8 @@
     "additionalNotes": "",
     "healthRecovered": -3,
     "hungerRecovered": 150,
-    "sanityRecovered": -5
+    "sanityRecovered": -5,
+    "crockPotPriority": 1
   },
   {
     "name": "Hard Shell Tacos",
@@ -458,7 +486,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 1
   },
   {
     "name": "Honey Ham",
@@ -474,7 +503,8 @@
     "additionalNotes": "",
     "healthRecovered": 30,
     "hungerRecovered": 75,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 2
   },
   {
     "name": "Honey Nuggets",
@@ -490,7 +520,8 @@
     "additionalNotes": "Meats value needs to be lower than 1.5",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 2
   },
   {
     "name": "Ice Cream",
@@ -507,7 +538,8 @@
     "additionalNotes": "",
     "healthRecovered": 0,
     "hungerRecovered": 25,
-    "sanityRecovered": 50
+    "sanityRecovered": 50,
+    "crockPotPriority": 10
   },
   {
     "name": "Iced Tea",
@@ -524,7 +556,8 @@
     "additionalNotes": "",
     "healthRecovered": 3,
     "hungerRecovered": 12.5,
-    "sanityRecovered": 33
+    "sanityRecovered": 33,
+    "crockPotPriority": 30
   },
   {
     "name": "Jellybeans",
@@ -538,7 +571,8 @@
     "additionalNotes": "Recovers 2 health every 2 seconds, with initial heal for 2",
     "healthRecovered": 122,
     "hungerRecovered": 0,
-    "sanityRecovered": 0
+    "sanityRecovered": 0,
+    "crockPotPriority": 12
   },
   {
     "name": "Jelly-O Pop",
@@ -554,7 +588,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 12.5,
-    "sanityRecovered": 0
+    "sanityRecovered": 0,
+    "crockPotPriority": 20
   },
   {
     "name": "Jelly Salad",
@@ -570,7 +605,8 @@
     "additionalNotes": "",
     "healthRecovered": 0,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 50
+    "sanityRecovered": 50,
+    "crockPotPriority": 50
   },
   {
     "name": "Kabobs",
@@ -586,7 +622,8 @@
     "additionalNotes": "",
     "healthRecovered": 3,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 5
   },
   {
     "name": "Mandrake Soup",
@@ -600,7 +637,8 @@
     "additionalNotes": "Mandrake needs to be raw",
     "healthRecovered": 100,
     "hungerRecovered": 150,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 10
   },
   {
     "name": "Meatballs",
@@ -614,7 +652,8 @@
     "additionalNotes": "",
     "healthRecovered": 3,
     "hungerRecovered": 62.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": -1
   },
   {
     "name": "Meaty Stew",
@@ -628,7 +667,8 @@
     "additionalNotes": "",
     "healthRecovered": 12,
     "hungerRecovered": 150,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 0
   },
   {
     "name": "Melonsicle",
@@ -644,7 +684,8 @@
     "additionalNotes": "",
     "healthRecovered": 3,
     "hungerRecovered": 12.5,
-    "sanityRecovered": 20
+    "sanityRecovered": 20,
+    "crockPotPriority": 10
   },
   {
     "name": "Monster Lasagna",
@@ -658,7 +699,8 @@
     "additionalNotes": "",
     "healthRecovered": -20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": -20
+    "sanityRecovered": -20,
+    "crockPotPriority": 10
   },
   {
     "name": "Leafy Meatloaf",
@@ -672,7 +714,8 @@
     "additionalNotes": "",
     "healthRecovered": 8,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 25
   },
   {
     "name": "Nettle Rolls",
@@ -686,7 +729,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 25,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 0
   },
   {
     "name": "Powdercake",
@@ -702,7 +746,8 @@
     "additionalNotes": "DON'T MAKE IT. Seriously, don't.",
     "healthRecovered": -3,
     "hungerRecovered": 0,
-    "sanityRecovered": 0
+    "sanityRecovered": 0,
+    "crockPotPriority": 10
   },
   {
     "name": "Pumpkin Cookies",
@@ -718,7 +763,8 @@
     "additionalNotes": "Adding more than 2 sweeteners may result in Taffy",
     "healthRecovered": 0,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 15
+    "sanityRecovered": 15,
+    "crockPotPriority": 10
   },
   {
     "name": "Ratatouille",
@@ -732,7 +778,8 @@
     "additionalNotes": "",
     "healthRecovered": 3,
     "hungerRecovered": 25,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 0
   },
   {
     "name": "Salsa Fresca",
@@ -747,7 +794,8 @@
     "additionalNotes": "",
     "healthRecovered": 3,
     "hungerRecovered": 25,
-    "sanityRecovered": 33
+    "sanityRecovered": 33,
+    "crockPotPriority": 20
   },
   {
     "name": "Seafood Gumbo",
@@ -761,7 +809,8 @@
     "additionalNotes": "Needs at least 2.0 fish food value",
     "healthRecovered": 40,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 20
+    "sanityRecovered": 20,
+    "crockPotPriority": 10
   },
   {
     "name": "Shark Fin Soup",
@@ -775,7 +824,8 @@
     "additionalNotes": "",
     "healthRecovered": 40,
     "hungerRecovered": 12.5,
-    "sanityRecovered": -10
+    "sanityRecovered": -10,
+    "crockPotPriority": 20
   },
   {
     "name": "Snake Bone Soup",
@@ -791,7 +841,8 @@
     "additionalNotes": "You can put more than 1 Monster meat because of priority",
     "healthRecovered": 40,
     "hungerRecovered": 25,
-    "sanityRecovered": 10
+    "sanityRecovered": 10,
+    "crockPotPriority": 20
   },
   {
     "name": "Spicy Chili",
@@ -806,7 +857,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 0
+    "sanityRecovered": 0,
+    "crockPotPriority": 10
   },
   {
     "name": "Spicy Vegetable Stinger",
@@ -823,7 +875,8 @@
     "additionalNotes": "Can also use Asparagus instead of Radish",
     "healthRecovered": 3,
     "hungerRecovered": 25,
-    "sanityRecovered": 33
+    "sanityRecovered": 33,
+    "crockPotPriority": 15
   },
   {
     "name": "Vegetable Stinger",
@@ -839,7 +892,8 @@
     "additionalNotes": "Can also use Asparagus instead of Toma Root",
     "healthRecovered": 3,
     "hungerRecovered": 25,
-    "sanityRecovered": 33
+    "sanityRecovered": 33,
+    "crockPotPriority": 15
   },
   {
     "name": "Steamed Ham Sandwich",
@@ -856,7 +910,8 @@
     "additionalNotes": "You'll get Spicy Chilli if you use more than 1 Meat",
     "healthRecovered": 40,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 15
+    "sanityRecovered": 15,
+    "crockPotPriority": 5
   },
   {
     "name": "Stuffed Eggplant",
@@ -871,7 +926,8 @@
     "additionalNotes": "",
     "healthRecovered": 3,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 1
   },
   {
     "name": "Asparagazpacho (DST)",
@@ -886,7 +942,8 @@
     "additionalNotes": "Don't Starve Together Exclusive",
     "healthRecovered": 3,
     "hungerRecovered": 25,
-    "sanityRecovered": 10
+    "sanityRecovered": 10,
+    "crockPotPriority": 30
   },
   {
     "name": "Bone Bouillon (DST)",
@@ -901,7 +958,8 @@
     "additionalNotes": "",
     "healthRecovered": 32,
     "hungerRecovered": 150,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 30
   },
   {
     "name": "Fish Cordon Bleu (DST)",
@@ -917,7 +975,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": -10
+    "sanityRecovered": -10,
+    "crockPotPriority": 30
   },
   {
     "name": "Fresh Fruit Crepes",
@@ -934,7 +993,8 @@
     "additionalNotes": "",
     "healthRecovered": 60,
     "hungerRecovered": 150,
-    "sanityRecovered": 15
+    "sanityRecovered": 15,
+    "crockPotPriority": 30
   },
   {
     "name": "Glow Berry Mousse (DST)",
@@ -950,7 +1010,8 @@
     "additionalNotes": "Can also replace a single Glow Berry with 2 Lesser Glow Berries",
     "healthRecovered": 3,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 10
+    "sanityRecovered": 10,
+    "crockPotPriority": 30
   },
   {
     "name": "Grim Galette (DST)",
@@ -966,7 +1027,8 @@
     "additionalNotes": "Swaps player's health and sanity levels",
     "healthRecovered": 1,
     "hungerRecovered": 25,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 30
   },
   {
     "name": "Hot Dragon Chili Salad (DST)",
@@ -981,7 +1043,8 @@
     "additionalNotes": "",
     "healthRecovered": -3,
     "hungerRecovered": 25,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 30
   },
   {
     "name": "Monster Tartare (DST)",
@@ -997,7 +1060,8 @@
     "additionalNotes": "",
     "healthRecovered": -20,
     "hungerRecovered": 62.5,
-    "sanityRecovered": -20
+    "sanityRecovered": -20,
+    "crockPotPriority": 30
   },
   {
     "name": "Monster Tartare",
@@ -1013,7 +1077,8 @@
     "additionalNotes": "",
     "healthRecovered": 3,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 10
+    "sanityRecovered": 10,
+    "crockPotPriority": 30
   },
   {
     "name": "Moqueca (DST)",
@@ -1029,7 +1094,8 @@
     "additionalNotes": "",
     "healthRecovered": 60,
     "hungerRecovered": 112.5,
-    "sanityRecovered": 33
+    "sanityRecovered": 33,
+    "crockPotPriority": 30
   },
   {
     "name": "Mussel Bouillabaise",
@@ -1045,7 +1111,8 @@
     "additionalNotes": "Mussels must be uncooked",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 15
+    "sanityRecovered": 15,
+    "crockPotPriority": 30
   },
   {
     "name": "Puffed Potato Soufflé (DST)",
@@ -1060,7 +1127,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 15
+    "sanityRecovered": 15,
+    "crockPotPriority": 30
   },
   {
     "name": "Sweet Potato Souffle (DST)",
@@ -1076,7 +1144,8 @@
     "additionalNotes": "The potatoes must be raw",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 15
+    "sanityRecovered": 15,
+    "crockPotPriority": 30
   },
   {
     "name": "Volt Goat Chaud-Froid (DST)",
@@ -1092,7 +1161,8 @@
     "additionalNotes": "",
     "healthRecovered": 3,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 10
+    "sanityRecovered": 10,
+    "crockPotPriority": 30
   },
   {
     "name": "Stuffed Fish Heads",
@@ -1107,7 +1177,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 75,
-    "sanityRecovered": 0
+    "sanityRecovered": 0,
+    "crockPotPriority": 25
   },
   {
     "name": "Stuffed Pepper Poppers",
@@ -1123,7 +1194,8 @@
     "additionalNotes": "",
     "healthRecovered": 30,
     "hungerRecovered": 25,
-    "sanityRecovered": -5
+    "sanityRecovered": -5,
+    "crockPotPriority": 20
   },
   {
     "name": "Surf 'n' Turf",
@@ -1138,7 +1210,8 @@
     "additionalNotes": "",
     "healthRecovered": 60,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 33
+    "sanityRecovered": 33,
+    "crockPotPriority": 30
   },
   {
     "name": "Taffy",
@@ -1152,7 +1225,8 @@
     "additionalNotes": "",
     "healthRecovered": -3,
     "hungerRecovered": 25,
-    "sanityRecovered": 15
+    "sanityRecovered": 15,
+    "crockPotPriority": 10
   },
   {
     "name": "Tea",
@@ -1168,7 +1242,8 @@
     "additionalNotes": "",
     "healthRecovered": 3,
     "hungerRecovered": 12.5,
-    "sanityRecovered": 33
+    "sanityRecovered": 33,
+    "crockPotPriority": 25
   },
   {
     "name": "Trail Mix",
@@ -1184,7 +1259,8 @@
     "additionalNotes": "",
     "healthRecovered": 30,
     "hungerRecovered": 12.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 10
   },
   {
     "name": "Tropical Bouillabaisse",
@@ -1202,7 +1278,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 15
+    "sanityRecovered": 15,
+    "crockPotPriority": 35
   },
   {
     "name": "Turkey Dinner",
@@ -1219,7 +1296,8 @@
     "additionalNotes": "Drumsticks must be raw. Also, you can use Veggies instead of fruits.",
     "healthRecovered": 20,
     "hungerRecovered": 75,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 10
   },
   {
     "name": "Unagi",
@@ -1234,7 +1312,8 @@
     "additionalNotes": "",
     "healthRecovered": 20,
     "hungerRecovered": 18.75,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 20
   },
   {
     "name": "Veggie Burger",
@@ -1250,7 +1329,8 @@
     "additionalNotes": "",
     "healthRecovered": 30,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 33
+    "sanityRecovered": 33,
+    "crockPotPriority": 25
   },
   {
     "name": "Waffles",
@@ -1267,7 +1347,8 @@
     "additionalNotes": "",
     "healthRecovered": 60,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 5
+    "sanityRecovered": 5,
+    "crockPotPriority": 10
   },
   {
     "name": "Wobster Dinner",
@@ -1282,7 +1363,8 @@
     "additionalNotes": "",
     "healthRecovered": 60,
     "hungerRecovered": 37.5,
-    "sanityRecovered": 50
+    "sanityRecovered": 50,
+    "crockPotPriority": 25
   },
   {
     "name": "Wobster Bisque",
@@ -1297,6 +1379,7 @@
     "additionalNotes": "",
     "healthRecovered": 60,
     "hungerRecovered": 25,
-    "sanityRecovered": 10
+    "sanityRecovered": 10,
+    "crockPotPriority": 30
   }
 ]

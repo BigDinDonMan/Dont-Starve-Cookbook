@@ -10,6 +10,8 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.function.Predicate;
 
 //TODO: load everything with threads
 public class CrockPotDishesStorage {
@@ -63,4 +65,5 @@ public class CrockPotDishesStorage {
     public Map<CrockPotDish, Image> getDishIcons() {
         return dishIcons;
     }
+
 }
