@@ -1,5 +1,6 @@
 package dontstarvecookbook.core;
 
+import dontstarvecookbook.core.utils.FXUtilities;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +9,7 @@ import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -42,24 +44,30 @@ public class CharacterFavouriteFoodInfoDisplay extends BorderPane {
         displayInfo();
     }
 
-    //TODO: download 'x' image and set is as warly's favourite
     private void displayInfo() {
         this.characterIconImageView.setImage(
                 new Image(getClass().getResource(String.format("/images/characters/%s.png", info.getCharacterName().toLowerCase())).toExternalForm())
         );
         try {
-            if (info.isCrockPotDish()) {
-                this.foodIconImageView.setImage(new Image(String.format("/images/crockpot-dish-icons/%s.png", info.getFoodName().toLowerCase().replace(' ', '-').
-                        replace("'", "").replace("-(dst)", "").trim())));
+            if (info.getCharacterName().equals("Warly")) {
+                this.foodIconImageView.setImage(new Image("/images/x.png"));
             } else {
-                this.foodIconImageView.setImage(new Image(String.format("/images/ingredient-icons/%s.png", info.getFoodName().toLowerCase().replace(' ', '-').
-                        replace("'", "").replace("-(dst)", "").trim())));
+                if (info.isCrockPotDish()) {
+                    this.foodIconImageView.setImage(new Image(String.format("/images/crockpot-dish-icons/%s.png", info.getFoodName().toLowerCase().replace(' ', '-').
+                            replace("'", "").replace("-(dst)", "").trim())));
+                } else {
+                    this.foodIconImageView.setImage(new Image(String.format("/images/ingredient-icons/%s.png", info.getFoodName().toLowerCase().replace(' ', '-').
+                            replace("'", "").replace("-(dst)", "").trim())));
+                }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Tooltip.install(this.characterIconImageView, new Tooltip(info.getCharacterName()));
-        Tooltip.install(this.foodIconImageView, new Tooltip(info.getFoodName()));
+            Tooltip characterTooltip, foodTooltip;
+            characterTooltip = new Tooltip(info.getCharacterName());
+            foodTooltip = new Tooltip(info.getFoodName());
+            FXUtilities.hackTooltipTimer(characterTooltip, new Duration(50));
+            FXUtilities.hackTooltipTimer(foodTooltip, new Duration(50));
+            Tooltip.install(this.characterIconImageView, characterTooltip);
+            Tooltip.install(this.foodIconImageView, foodTooltip);
+        } catch (Exception ignored) {}
     }
 
     public void setInfo(CharacterFavouriteFoodInfo info) {

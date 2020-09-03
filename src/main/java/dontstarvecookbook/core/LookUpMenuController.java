@@ -3,18 +3,21 @@ package dontstarvecookbook.core;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import dontstarvecookbook.core.enums.IngredientType;
+import dontstarvecookbook.core.utils.FXUtilities;
 import dontstarvecookbook.core.utils.StringUtilities;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -88,6 +91,7 @@ public class LookUpMenuController implements Initializable {
                     setGraphic(base);
                     setText(null);
                     Tooltip itemTooltip = new Tooltip(item.getName());
+                    FXUtilities.hackTooltipTimer(itemTooltip, new Duration(50));
                     //TODO: upgrade project Java version to 9, so we can control the show delay in the tooltip
                     setTooltip(itemTooltip);
                 } else {
@@ -131,9 +135,11 @@ public class LookUpMenuController implements Initializable {
     }
 
     private void displayFavouriteFoods() {
+        Insets displayInsets = new Insets(0, 5, 10, 5);
         this.characterFavouriteFoodInfos.forEach(info -> {
             CharacterFavouriteFoodInfoDisplay display = new CharacterFavouriteFoodInfoDisplay(info);
             favouriteFoodsVBox.getChildren().add(display);
+            VBox.setMargin(display, displayInsets);
         });
     }
 }

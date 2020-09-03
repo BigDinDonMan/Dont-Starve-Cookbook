@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXHamburger;
 import com.jfoenix.transitions.hamburger.HamburgerBasicCloseTransition;
 import dontstarvecookbook.core.enums.DishType;
 import dontstarvecookbook.core.enums.IngredientType;
+import dontstarvecookbook.core.utils.FXUtilities;
 import dontstarvecookbook.core.utils.StringUtilities;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -18,6 +19,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 import org.controlsfx.control.textfield.CustomTextField;
 
 import java.io.IOException;
@@ -129,7 +131,9 @@ public class MainWindowController implements Initializable {
         });
 
         searchBarFilteredDishes = new HashSet<>();
-        searchBarTextField.setTooltip(new Tooltip("If ingredient name is 2 or more words then separate with '-' instead of spaces"));
+        Tooltip tooltip = new Tooltip("If ingredient name is 2 or more words then separate with '-' instead of spaces");
+        FXUtilities.hackTooltipTimer(tooltip, new Duration(50));
+        searchBarTextField.setTooltip(tooltip);
         searchBarTextField.textProperty().addListener(((observable, oldValue, newValue) -> {
             if (newValue == null || newValue.isEmpty()) {
                 setDishPredicateAndScrollToBeginning(p -> true);
