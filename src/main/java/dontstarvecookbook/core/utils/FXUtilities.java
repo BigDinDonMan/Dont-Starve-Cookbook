@@ -11,6 +11,7 @@ public class FXUtilities {
 
     private FXUtilities() {}
 
+    @Deprecated
     public static void hackTooltipTimer(Tooltip tooltip, Duration showDuration) {
         try {
             Field behaviourField = tooltip.getClass().getDeclaredField("BEHAVIOR");

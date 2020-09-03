@@ -63,10 +63,11 @@ public class CharacterFavouriteFoodInfoDisplay extends BorderPane {
             Tooltip characterTooltip, foodTooltip;
             characterTooltip = new Tooltip(info.getCharacterName());
             foodTooltip = new Tooltip(info.getFoodName());
-            FXUtilities.hackTooltipTimer(characterTooltip, new Duration(50));
-            FXUtilities.hackTooltipTimer(foodTooltip, new Duration(50));
-            Tooltip.install(this.characterIconImageView, characterTooltip);
-            Tooltip.install(this.foodIconImageView, foodTooltip);
+            Duration dur = new Duration(50);
+            foodTooltip.setShowDelay(dur);
+            characterTooltip.setShowDelay(dur);
+            Tooltip.install(characterIconImageView, characterTooltip);
+            Tooltip.install(foodIconImageView, foodTooltip);
         } catch (Exception ignored) {}
     }
 

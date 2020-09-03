@@ -91,8 +91,7 @@ public class LookUpMenuController implements Initializable {
                     setGraphic(base);
                     setText(null);
                     Tooltip itemTooltip = new Tooltip(item.getName());
-                    FXUtilities.hackTooltipTimer(itemTooltip, new Duration(50));
-                    //TODO: upgrade project Java version to 9, so we can control the show delay in the tooltip
+                    itemTooltip.setShowDelay(new Duration(50));
                     setTooltip(itemTooltip);
                 } else {
                     setGraphic(null);

@@ -132,7 +132,7 @@ public class MainWindowController implements Initializable {
 
         searchBarFilteredDishes = new HashSet<>();
         Tooltip tooltip = new Tooltip("If ingredient name is 2 or more words then separate with '-' instead of spaces");
-        FXUtilities.hackTooltipTimer(tooltip, new Duration(50));
+        tooltip.setShowDelay(new Duration(50));
         searchBarTextField.setTooltip(tooltip);
         searchBarTextField.textProperty().addListener(((observable, oldValue, newValue) -> {
             if (newValue == null || newValue.isEmpty()) {
@@ -234,7 +234,6 @@ public class MainWindowController implements Initializable {
         hungerRestoredLabel.setText(df.format(dish.getHungerRecovered()));
         sanityRestoredLabel.setText(Integer.toString(dish.getSanityRecovered()));
 
-//        String path = FileUtilities.formatImagePath(dish, "png");
         dishIconImageView.setImage(CrockPotDishesStorage.getInstance().getDishIcons().get(dish));
 
         String textStyle = "-fx-font-size: 16px;";
