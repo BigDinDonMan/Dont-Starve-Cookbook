@@ -18,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 import org.controlsfx.control.textfield.CustomTextField;
@@ -40,6 +41,8 @@ public class MainWindowController implements Initializable {
 
     @FXML
     private VBox infoVBox;
+    @FXML
+    private VBox crockPotPriorityContainer;
 
     @FXML
     private Button baseGameSpecificToggleButton;
@@ -69,6 +72,8 @@ public class MainWindowController implements Initializable {
     private Label hungerRestoredLabel;
     @FXML
     private Label sanityRestoredLabel;
+    @FXML
+    private Label crockPotPriorityLabel;
 
     @FXML
     private JFXDrawer foodValuesJfxDrawer;
@@ -141,6 +146,10 @@ public class MainWindowController implements Initializable {
                 displayIngredientSearchResults(newValue);
             }
         }));
+
+        Tooltip t = new Tooltip("Crock pot priority");
+        t.setShowDelay(new Duration(150));
+        Tooltip.install(crockPotPriorityContainer, t);
     }
 
     private void displayIngredientSearchResults(String inputString) {
@@ -233,6 +242,7 @@ public class MainWindowController implements Initializable {
         healthRestoredLabel.setText(Integer.toString(dish.getHealthRecovered()));
         hungerRestoredLabel.setText(df.format(dish.getHungerRecovered()));
         sanityRestoredLabel.setText(Integer.toString(dish.getSanityRecovered()));
+        crockPotPriorityLabel.setText(Integer.toString(dish.getCrockPotPriority()));
 
         dishIconImageView.setImage(CrockPotDishesStorage.getInstance().getDishIcons().get(dish));
 
@@ -278,7 +288,6 @@ public class MainWindowController implements Initializable {
             }
         }
 
-        //TODO: fill the infoVBox with labels describing dish information
         Label excludedIngredientsTitle = createLabel("Excluded ingredients: ", titleStyle, true);
         infoVBox.getChildren().add(excludedIngredientsTitle);
         VBox.setMargin(excludedIngredientsTitle, titleInsets);
@@ -314,9 +323,16 @@ public class MainWindowController implements Initializable {
         Label additionalNotesTitle = createLabel("Additional notes: ", titleStyle, true);
         infoVBox.getChildren().add(additionalNotesTitle);
         VBox.setMargin(additionalNotesTitle, titleInsets);
-        Label text = createLabel(dish.getAdditionalNotes().isEmpty() ? "None" : dish.getAdditionalNotes(), textStyle, true);
-        infoVBox.getChildren().add(text);
-        VBox.setMargin(text, new Insets(5, 0, 0, 30));
+        TextArea displayArea = new TextArea();
+        displayArea.getStyleClass().add("informationtextarea");
+        displayArea.setText(dish.getAdditionalNotes().isEmpty() ? "None" : dish.getAdditionalNotes());
+        displayArea.setEditable(false);
+        displayArea.setPrefHeight(150);
+        displayArea.setPrefWidth(85);
+        displayArea.setWrapText(true);
+        infoVBox.getChildren().add(displayArea);
+        VBox.setMargin(displayArea, new Insets(0,0,0,20));
+        VBox.setVgrow(displayArea, Priority.ALWAYS);
     }
 
     private Label createLabel(String text, String style, boolean wrap) {

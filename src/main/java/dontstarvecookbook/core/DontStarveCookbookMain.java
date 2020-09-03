@@ -18,6 +18,7 @@ public class DontStarveCookbookMain extends Application {
         try (InputStream is = getClass().getResourceAsStream("/images/appicon.png")) {
             stage.getIcons().add(new Image(is));
         }
+        s.getStylesheets().add(getClass().getResource("/dontstarvecookbook/css/appstyle.css").toExternalForm());
         stage.setScene(s);
         stage.setResizable(false);
         stage.setTitle("Don't Starve Cookbook");

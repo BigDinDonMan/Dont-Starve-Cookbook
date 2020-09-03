@@ -1,0 +1,21 @@
+.informationtextarea {
+    -fx-background-color: #f7f7f7;
+    -fx-font-size: 16px;
+    -fx-cursor: default;
+}
+
+.informationtextarea .scroll-pane {
+    -fx-background-color: transparent;
+    -fx-cursor: default;
+}
+
+.informationtextarea .scroll-pane .viewport{
+    -fx-background-color: transparent;
+    -fx-cursor: default;
+}
+
+
+.informationtextarea .scroll-pane .content{
+    -fx-background-color: transparent;
+    -fx-cursor: default;
+}
